@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 3 мета тега ДОЛЖНЫ идти ПЕРВЫМИ в head;
+    любой другой head контент ДОЛЖЕН идти ПОСЛЕ этих тегов -->
+    <title>Добавление файла</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!--Иконки Font-awesome-->
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <!--Google шрифт-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed|PT+Sans+Narrow" rel="stylesheet">
+
+    <!-- Последняя CSS -->
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="node_modules/bootstrap-fileinput-master/css/fileinput.css" media="all" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/add_file.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<header>
+    <nav class="navbar navbar-default menu">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="images/logo_ru.png" alt="Логотип Луганского национального университета"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav first_menu">
+                    <li><a href="index.html">Преподаватели</a></li>
+                    <li><a href="subject.html">Предметы</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Логин<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Настройки</a></li>
+                            <li><a href="#">Смена пароля</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Выход</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+            <div class="submenu nav navbar-nav navbar-right submenu-right">
+                <form class="navbar-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Введите запрос">
+                    </div>
+                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                </form>
+            </div>
+        </div><!-- /.container-fluid -->
+    </nav>
+</header>
+    <h1 class="text-center">Добавление файла</h1>
+    <div class="container">
+        <form role="form" class="form">
+            <div class="form-group">
+                <label for="name_file">Наименование файла:</label>
+                <input type="name_file" class="form-control" id="name_file" placeholder="Введите название файла">
+            </div>
+            <div class="form-group">
+                <select class="selectpicker" title="Выберите курс" data-width="auto">
+                    <optgroup label="Бакалавриат">
+                        <option>1 курс</option>
+                        <option>2 курс</option>
+                        <option>3 курс</option>
+                        <option>4 курс</option>
+                    </optgroup>
+                    <optgroup label="Магистратура">
+                        <option>5 курс</option>
+                        <option>6 курс</option>
+                    </optgroup>
+                </select>
+                <select class="selectpicker" title="Выберите группу" data-width="auto" data-live-search="true">
+                    <optgroup>
+                        <option>ИТ-431</option>
+                        <option>ИТ-432</option>
+                        <option>ИТ-433</option>
+                        <option>ИТ-441</option>
+                        <option>ИТ-442</option>
+                        <option>ИТ-443</option>
+                        <option>ИТ-451</option>
+                        <option>ИТ-452</option>
+                        <option>ИТ-461</option>
+                        <option>ИТ-462</option>
+                        <option>ИТ-451м</option>
+                        <option>ИТ-461м</option>
+                    </optgroup>
+                </select>
+                <select class="selectpicker" title="Выберите предмет" data-width="auto" data-live-search="true">
+                    <optgroup>
+                        <option>Периферийные устройства</option>
+                        <option>Теория кодирования дискретной информации</option>
+                        <option>Программирование интернет приложений</option>
+                        <option>Иностранный язык</option>
+                        <option>Защита информации</option>
+                        <option>Технологии корпоративных сетей</option>
+                        <option>Технологии проетировния компьютерных систем</option>
+                        <option>Системы искусственного интеллекта</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <!--Был использован класс ранее form-group, сейчас в css нет-->
+            <!--TODO_css: Использовать класс form-group в add-file.css-->
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Лекция
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Практика
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Select File</label>
+                <input id="input-22" name="input22[]" type="file" class="file-loading" accept="text/plain" multiple>
+            </div>
+            <div class="form-group">
+                <label for="description">Описание:</label>
+                <textarea class="form-control" rows="5" id="description"></textarea>
+            </div>
+        </form>
+    </div>
+
+
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<!-- the main fileinput plugin file -->
+<script src="node_modules/bootstrap-fileinput-master/js/fileinput.js"></script>
+<!-- optionally if you need translation for your language then include
+    locale file as mentioned below -->
+<script src="node_modules/bootstrap-fileinput-master/js/locales/ru.js"></script>
+
+<script>
+    $(document).on('ready', function() {
+        $("#input-22").fileinput({
+            previewFileType: "text",
+            allowedFileExtensions: ["txt", "md", "ini", "text"],
+            previewClass: "bg-warning"
+        });
+    });
+</script>
+
+</body>
+</html>
