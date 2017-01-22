@@ -4,24 +4,33 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- 3 мета тега ДОЛЖНЫ идти ПЕРВЫМИ в head;
+    любой другой head контент ДОЛЖЕН идти ПОСЛЕ этих тегов -->
     <title>Dropbox</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/dropbox.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed|PT+Sans+Narrow" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-table.css">
-      <!-- Latest compiled and minified CSS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!--Google шрифт-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed|PT+Sans+Narrow" rel="stylesheet">
+
+    <!-- Bootstrap-table (плагин) -->
+    <link rel="stylesheet" href="node_modules/bootstrap-table/dist/bootstrap-table.min.css">
+
+    <!-- Bootstrap-select (плагин) -->
+    <link rel="stylesheet" href="node_modules/bootstrap-select/dist/css/bootstrap-select.min.css">
+
+    <!--Последние CSS-->
+    <link rel="stylesheet" href="public/css/dropbox.css">
+
+    <!--Иконки  -->
+    <link rel="stylesheet" href="public/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!-- HTML5 и Respond.js для поддержки IE8 элементов HTML5 и медиа-запросов -->
+    <!-- ПРЕДУПРЕЖДЕНИЕ: Respond.js не работает, если вы просматриваете страницу с помощью file:// -->
+    <script src="public/js/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   </head>
   <body>
     <header>
@@ -35,7 +44,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#"><img src="images/logo_ru.png" alt="Логотип Луганского национального университета"></a>
+              <a class="navbar-brand" href="#"><img src="public/images/logo_ru.png" alt="Логотип Луганского национального университета"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -276,17 +285,18 @@
           </div>
       </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap-table.js"></script>
+    <!-- jQuery (необходим для JavaScript плагинов Bootstrap) -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
-
-    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/i18n/defaults-ru_RU.js"></script>
+    <!-- Подключите все скомпилированные плагины (ниже)
+     или добавьте другие файлы при необходимости -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--Плагин Bootstrap-table-->
+    <script src="node_modules/bootstrap-table/dist/bootstrap-table.min.js"></script>
+    <script src="node_modules/bootstrap-table/dist/locale/bootstrap-table-ru-RU.min.js"></script>
+    <!--Плагин Bootstrap-select-->
+    <script src="node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="node_modules/bootstrap-select/dist/js/i18n/defaults-ru_RU.min.js"></script>
 
     <script>
         var $table = $('#table');
