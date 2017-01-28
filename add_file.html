@@ -9,26 +9,27 @@
     <title>Добавление файла</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!--Иконки Font-awesome-->
-    <link rel="stylesheet" href="css/font-awesome.css">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!--Google шрифт-->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed|PT+Sans+Narrow" rel="stylesheet">
 
-    <!-- Последняя CSS -->
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">-->
-    <link href="node_modules/bootstrap-fileinput-master/css/fileinput.css" media="all" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
+    <!-- Bootstrap-select (плагин) -->
+    <link rel="stylesheet" href="node_modules/bootstrap-select/dist/css/bootstrap-select.min.css">
 
-    <link rel="stylesheet" type="text/css" href="css/add_file.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Bootstrap-FileInput (плагин) -->
+    <link rel="stylesheet" href="node_modules/bootstrap-fileinput/css/fileinput.min.css">
+
+    <!-- Последняя CSS -->
+    <link rel="stylesheet" href="public/css/add_file.css">
+
+    <!--Иконки Font-awesome-->
+    <link rel="stylesheet" href="public/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!-- HTML5 и Respond.js для поддержки IE8 элементов HTML5 и медиа-запросов -->
+    <!-- ПРЕДУПРЕЖДЕНИЕ: Respond.js не работает, если вы просматриваете страницу с помощью file:// -->
+    <script src="public/js/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 </head>
 
 <body>
@@ -43,7 +44,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="images/logo_ru.png" alt="Логотип Луганского национального университета"></a>
+                <a class="navbar-brand" href="#"><img src="public/images/logo_ru.png" alt="Логотип Луганского национального университета"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -136,10 +137,12 @@
                 </label>
             </div>
 
+            <!--Добавление файла-->
             <div class="form-group">
-                <label class="control-label">Select File</label>
-                <input id="input-22" name="input22[]" type="file" class="file-loading" accept="text/plain" multiple>
+                <label class="control-label">Выберите файл</label>
+                <input id="input-ru" name="inputru[]" type="file" multiple class="file-loading">
             </div>
+
             <div class="form-group">
                 <label for="description">Описание:</label>
                 <textarea class="form-control" rows="5" id="description"></textarea>
@@ -149,23 +152,26 @@
 
 
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-3.1.1.min.js"></script>
-<!-- the main fileinput plugin file -->
-<script src="node_modules/bootstrap-fileinput-master/js/fileinput.js"></script>
-<!-- optionally if you need translation for your language then include
-    locale file as mentioned below -->
-<script src="node_modules/bootstrap-fileinput-master/js/locales/ru.js"></script>
+
+<!-- jQuery (необходим для JavaScript плагинов Bootstrap) -->
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+<!-- Подключите все скомпилированные плагины (ниже)
+ или добавьте другие файлы при необходимости -->
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<!--Плагин Bootstrap-select-->
+<script src="node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+<script src="node_modules/bootstrap-select/dist/js/i18n/defaults-ru_RU.min.js"></script>
+<!--Плагин Bootstrap-FileInput-->
+<script src="node_modules/bootstrap-fileinput/js/fileinput.min.js"></script>
+<script src="node_modules/bootstrap-fileinput/themes/fa/theme.js"></script>
+<script src="node_modules/bootstrap-fileinput/js/locales/ru.js"></script>
 
 <script>
-    $(document).on('ready', function() {
-        $("#input-22").fileinput({
-            previewFileType: "text",
-            allowedFileExtensions: ["txt", "md", "ini", "text"],
-            previewClass: "bg-warning"
-        });
+    $("#input-ru").fileinput({
+        language: "ru",
+        uploadUrl: "/file-upload-batch/2",
+        allowedFileExtensions: ["jpg", "png", "gif"]
     });
 </script>
 
