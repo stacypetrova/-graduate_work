@@ -83,69 +83,79 @@
                 <label for="name_file">Наименование файла:</label>
                 <input type="name_file" class="form-control" id="name_file" placeholder="Введите название файла">
             </div>
-            <div class="form-group">
-                <select class="selectpicker" title="Выберите курс" data-width="auto">
-                    <optgroup label="Бакалавриат">
-                        <option>1 курс</option>
-                        <option>2 курс</option>
-                        <option>3 курс</option>
-                        <option>4 курс</option>
-                    </optgroup>
-                    <optgroup label="Магистратура">
-                        <option>5 курс</option>
-                        <option>6 курс</option>
-                    </optgroup>
-                </select>
-                <select class="selectpicker" title="Выберите группу" data-width="auto" data-live-search="true">
-                    <optgroup>
-                        <option>ИТ-431</option>
-                        <option>ИТ-432</option>
-                        <option>ИТ-433</option>
-                        <option>ИТ-441</option>
-                        <option>ИТ-442</option>
-                        <option>ИТ-443</option>
-                        <option>ИТ-451</option>
-                        <option>ИТ-452</option>
-                        <option>ИТ-461</option>
-                        <option>ИТ-462</option>
-                        <option>ИТ-451м</option>
-                        <option>ИТ-461м</option>
-                    </optgroup>
-                </select>
-                <select class="selectpicker" title="Выберите предмет" data-width="auto" data-live-search="true">
-                    <optgroup>
-                        <option>Периферийные устройства</option>
-                        <option>Теория кодирования дискретной информации</option>
-                        <option>Программирование интернет приложений</option>
-                        <option>Иностранный язык</option>
-                        <option>Защита информации</option>
-                        <option>Технологии корпоративных сетей</option>
-                        <option>Технологии проетировния компьютерных систем</option>
-                        <option>Системы искусственного интеллекта</option>
-                    </optgroup>
-                </select>
+            <div class="row">
+                <div class="col-md-3 kurs">
+                    <div class="form-group">
+                        <select class="selectpicker" title="Выберите курс" data-width="100%">
+                            <optgroup label="Бакалавриат">
+                                <option>1 курс</option>
+                                <option>2 курс</option>
+                                <option>3 курс</option>
+                                <option>4 курс</option>
+                            </optgroup>
+                            <optgroup label="Магистратура">
+                                <option>5 курс</option>
+                                <option>6 курс</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3 group">
+                    <div class="form-group">
+                        <select class="selectpicker" title="Выберите группу" data-live-search="true" data-width="100%">
+                            <optgroup>
+                                <option>ИТ-431</option>
+                                <option>ИТ-432</option>
+                                <option>ИТ-433</option>
+                                <option>ИТ-441</option>
+                                <option>ИТ-442</option>
+                                <option>ИТ-443</option>
+                                <option>ИТ-451</option>
+                                <option>ИТ-452</option>
+                                <option>ИТ-461</option>
+                                <option>ИТ-462</option>
+                                <option>ИТ-451м</option>
+                                <option>ИТ-461м</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 subject">
+                    <div class="form-group">
+                        <select class="selectpicker" title="Выберите предмет" data-live-search="true" data-width="100%">
+                            <optgroup>
+                                <option>Периферийные устройства</option>
+                                <option>Теория кодирования дискретной информации</option>
+                                <option>Программирование интернет приложений</option>
+                                <option>Иностранный язык</option>
+                                <option>Защита информации</option>
+                                <option>Технологии корпоративных сетей</option>
+                                <option>Технологии проетировния компьютерных систем</option>
+                                <option>Системы искусственного интеллекта</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
             </div>
 
-            <!--Был использован класс ранее form-group, сейчас в css нет-->
-            <!--TODO_css: Использовать класс form-group в add-file.css-->
             <div class="btn-group" data-toggle="buttons">
-                <label class="btn btn-primary active">
+                <label class="btn btn-primary active lecture">
                     <input type="radio" name="options" id="option1" autocomplete="off" checked> Лекция
                 </label>
-                <label class="btn btn-primary">
+                <label class="btn btn-primary practice">
                     <input type="radio" name="options" id="option2" autocomplete="off"> Практика
                 </label>
             </div>
 
             <!--Добавление файла-->
-            <div class="form-group">
-                <label class="control-label">Выберите файл</label>
-                <input id="input-ru" name="inputru[]" type="file" multiple class="file-loading">
+            <div class="form-group chooseFile">
+                <label class="control-label">Выберите файл:</label>
+                <input id="input-file" name="input" type="file" multiple class="file-loading">
             </div>
 
             <div class="form-group">
                 <label for="description">Описание:</label>
-                <textarea class="form-control" rows="5" id="description"></textarea>
+                <textarea class="form-control" rows="3" id="description"></textarea>
             </div>
         </form>
     </div>
@@ -168,10 +178,9 @@
 <script src="node_modules/bootstrap-fileinput/js/locales/ru.js"></script>
 
 <script>
-    $("#input-ru").fileinput({
+    $("#input-file").fileinput({
         language: "ru",
-        uploadUrl: "/file-upload-batch/2",
-        allowedFileExtensions: ["jpg", "png", "gif"]
+        uploadUrl: "/file-upload-batch/2"
     });
 </script>
 
