@@ -46,7 +46,7 @@ label{
 }
 .submenu-right {
     margin-right: 10px;
-    width: 470px;
+    /*width: 470px;*/
 }
 .navbar-default .navbar-nav>li>a{
 	color: #8d8c8c;
@@ -68,11 +68,8 @@ label{
 }
 .sidebar{
 	padding-top: 50px;
-	width: 23%;
+	width: 20%;
 }
-/*.col-md-9{*/
-	/*padding: 0;*/
-/*}*/
 .tab-paneGroups{
 	padding-top: 50px;
 }

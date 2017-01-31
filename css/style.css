@@ -56,26 +56,41 @@ p{
 }
 .thumbnail{
 	width: 270px;
-	height: 400px;
+	height: 415px;
 }
-.btn-zvereva{
-	margin-top: 26px;
-}
-.btn-popov{
-	margin-top: 6px;
-}
-.btn-zorin{
-	margin-top: 26px;
-}
-.btn-popova{
-	margin-top: 26px;
-}
-.btn-sheglov{
-	margin-top: 26px;
-}
+/*.btn-zvereva{*/
+	/*margin-top: 26px;*/
+/*}*/
+/*.btn-popov{*/
+	/*margin-top: 6px;*/
+/*}*/
+/*.btn-zorin{*/
+	/*margin-top: 26px;*/
+/*}*/
+/*.btn-popova{*/
+	/*margin-top: 26px;*/
+/*}*/
+/*.btn-sheglov{*/
+	/*margin-top: 26px;*/
+/*}*/
 .thumbnail img{
 	margin-top: 12px;
+	width: 175px;
+	height: 247px;
 }
 h3{
 	margin: 0;
+}
+.FIO{
+	width: 220px;
+	height: 52px;
+}
+.position{
+	width: 242px;
+	height: 40px;
+}
+.More{
+	width: 242px;
+	height: 34px;
+	padding-top: 5px;
 }
