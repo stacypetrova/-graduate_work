@@ -61,17 +61,25 @@ label{
 	color: #8d8c8c;
 }
 .nav.nav-pills.nav-stacked{
-	margin-left: 80px;
+	margin-left: 65px;
 }
 .fa{
 	padding-right: 6px;
 }
-.col-md-9{
-	width: 955px;
-}
-.col-md-3{
+.sidebar{
 	padding-top: 50px;
+	width: 23%;
 }
+/*.col-md-9{*/
+	/*padding: 0;*/
+/*}*/
 .tab-paneGroups{
 	padding-top: 50px;
 }
+
+/*!*Tablet landscape*!*/
+/*@media screen and (min-width: 768px) and (max-width: 1024px){*/
+	/*.col-md-9{*/
+	/*min-width: 755px;*/
+	/*}*/
+/*}*/
