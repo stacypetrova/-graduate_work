@@ -10,6 +10,7 @@ header{
 h3{
 	font-family: 'PT Sans Narrow', sans-serif;
 	font-weight: normal;
+	margin: 0;
 }
 p{
 	font-family: 'PT Sans', sans-serif;
@@ -77,9 +78,6 @@ p{
 	margin-top: 12px;
 	width: 175px;
 	height: 247px;
-}
-h3{
-	margin: 0;
 }
 .FIO{
 	width: 220px;
