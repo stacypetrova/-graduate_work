@@ -13,6 +13,8 @@ h1{
     font-size: 28px;
 }
 h3{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-weight: normal;
     margin-top: 0;
 }
 .menu{
@@ -77,4 +79,10 @@ h3{
 }
 .col-md-4{
     padding: 15px;
+}
+.myPanel{
+    background-color: #e7e7e7;
+}
+.panel-body {
+    padding-bottom: 0;
 }
