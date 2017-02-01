@@ -1,0 +1,80 @@
+body{
+    background: #cccccc;
+    color: #868585;
+}
+header{
+    margin: 45px 0px 15px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: normal;
+}
+h1{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-weight: normal;
+    font-size: 28px;
+}
+h3{
+    margin-top: 0;
+}
+.menu{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+.navbar-brand{
+    padding-right: 80px;
+}
+.navbar-brand img{
+    position: relative;
+    top: -40px;
+    padding-left: 45px;
+}
+.navbar-header{
+    width: 220px;
+}
+.navbar-form{
+    padding-left: 5px;
+    padding-right: 0;
+}
+.navbar-form .form-control {
+    display: inline-block;
+    width: 225px;
+    vertical-align: middle;
+}
+.submenu-right {
+    margin-right: 10px;
+}
+.navbar-default .navbar-nav>li>a{
+    color: #8d8c8c;
+    font-size: 19px;
+    text-transform: uppercase;
+}
+.navbar-default .navbar-nav:not(.icons)>li>a:hover{
+    border-bottom: 1px solid #336699;
+    color: #8d8c8c;
+}
+.btn.btn-default{
+    color: #8d8c8c;
+}
+.container{
+    padding-top: 20px;
+}
+.thumbnail {
+    width: 250px;
+    height: 320px;
+}
+.thumbnail img {
+    margin-top: 5px;
+    width: 150px;
+    height: 217px;
+}
+.FIO {
+    width: 220px;
+    height: 52px;
+}
+.position {
+    width: 242px;
+    height: 40px;
+}
+.col-md-4{
+    padding: 15px;
+}
