@@ -1,8 +1,6 @@
 body{
 	background: #cccccc;
 	color: #868585;
-	position: relative;
-	overflow-x: hidden;
 }
 header{
 	margin: 45px 0px 55px;
@@ -10,19 +8,13 @@ header{
 	font-weight: normal;
 }
 h3{
-	font-family: 'Ubuntu Condensed', sans-serif;
+	font-family: 'PT Sans Narrow', sans-serif;
 	font-weight: normal;
-	text-align: center;
-	margin-top: 0;
+	margin: 0;
 }
 p{
-	font-size: 16px;
-	white-space: pre-line;
-	width: 170px;
-	margin: 0 0 4px;
-}
-p>strong{
-	font-family: 'PT Sans Narrow', sans-serif;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: normal;
 }
 .menu{
 	border: 0;
@@ -34,7 +26,7 @@ p>strong{
 }
 .navbar-brand img{
 	position: relative;
-	top: -40px;
+	top: -40px;	
 	padding-left: 45px;
 }
 .navbar-header{
@@ -63,30 +55,40 @@ p>strong{
 .btn.btn-default{
 	color: #8d8c8c;
 }
-.myPanel{
-	background-color: #e7e7e7;
+.thumbnail{
+	width: 270px;
+	height: 415px;
 }
-.profile_logo{
-	margin-bottom: 10px;
-}
-.subject_box{
-	margin-bottom: 15px;
-}
-.btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:visited{
-	background-color: cadetblue;
-	border-color: cadetblue;
-	color: white;
-}
-/*.subject_box{*/
-	/*background: linear-gradient(to top,paleturquoise, white);*/
-	/*border-radius: 10px;*/
-	/*padding: 0;*/
-	/*width: 180px;*/
-	/*margin: 5px 18px;*/
+/*.btn-zvereva{*/
+	/*margin-top: 26px;*/
 /*}*/
-/*.btn_list{*/
-	/*width: 170px;*/
-	/*height: 170px;*/
-	/*padding: 0;*/
-	/*margin: 5px;*/
+/*.btn-popov{*/
+	/*margin-top: 6px;*/
 /*}*/
+/*.btn-zorin{*/
+	/*margin-top: 26px;*/
+/*}*/
+/*.btn-popova{*/
+	/*margin-top: 26px;*/
+/*}*/
+/*.btn-sheglov{*/
+	/*margin-top: 26px;*/
+/*}*/
+.thumbnail img{
+	margin-top: 12px;
+	width: 175px;
+	height: 247px;
+}
+.FIO{
+	width: 220px;
+	height: 52px;
+}
+.position{
+	width: 242px;
+	height: 40px;
+}
+.More{
+	width: 242px;
+	height: 34px;
+	padding-top: 5px;
+}

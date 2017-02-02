@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,267 +12,191 @@
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!--Google шрифт-->
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed|PT+Sans+Narrow" rel="stylesheet">
+
+    <!-- Плагин Jasny Bootstrap -->
+    <link rel="stylesheet" href="node_modules/jasny-bootstrap/css/jasny-bootstrap.min.css">
 
     <!-- Последние CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <!-- HTML5 и Respond.js для поддержки IE8 элементов HTML5 и медиа-запросов -->
     <!-- ПРЕДУПРЕЖДЕНИЕ: Respond.js не работает, если вы просматриваете страницу с помощью file:// -->
-      <script src="js/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  </head>
+    <script src="js/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+</head>
 
-  <body>
+<body>
 
-    <header>
-        <nav class="navbar navbar-default menu">
-          <div class="container-fluid">
+<header>
+    <nav class="navbar navbar-default menu">
+        <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-              <a class="navbar-brand" href="#"><img src="images/logo_ru.png" alt="Логотип Луганского национального университета"></a>
+                <a class="navbar-brand" href="index.html"><img src="images/logo_ru.png"
+                                                      alt="Логотип Луганского национального университета"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav first_menu">
-                <li class="active-link"><a href="index.html">Преподаватели</a></li>
-                <li><a href="subject.html">Предметы</a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Логин<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Настройки</a></li>
-                    <li><a href="#">Смена пароля</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Выход</a></li>
-                  </ul>
-                </li>
-              </ul>
+                <ul class="nav navbar-nav first_menu">
+                    <li class="active-link"><a href="index.html">Мои предметы</a></li>
+                    <li><a href="teachers_stud.html">Преподаватели</a></li>
+                    <li><a href="#">Предметы на кафедре</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Логин<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Настройки</a></li>
+                            <li><a href="#">Смена пароля</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Выход</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div><!-- /.navbar-collapse -->
             <div class="submenu">
-              <form class="navbar-form navbar-right" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Введите запрос">
-              </div>
-              <button type="submit" class="btn btn-default">Поиск</button>
-            </form>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Введите запрос">
+                    </div>
+                    <button type="submit" class="btn btn-default">Поиск</button>
+                </form>
             </div>
-          </div><!-- /.container-fluid -->
-        </nav>
-      </header>
-      <div class="content">
-        <div class="container">
-          <div class="row">
+        </div><!-- /.container-fluid -->
+    </nav>
+</header>
+
+<div class="content">
+    <div class="container">
+        <div class="row">
             <div class="col-md-3">
-              <div class="thumbnail">
-                <img src="images/Popov-Sergey-Valer'yevich.png" alt="Попов Сергей Валерьевич">
-                <div class="caption">
-                  <div class="FIO">
-                    <h3>Попов Сергей Валерьевич</h3>
-                  </div>
-                  <div class="position">
-                    <p>Заведующий кафедрой, кандидат технических наук, доцент</p>
-                  </div>
-                  <div class="More">
-                    <a href="dropbox_stud.html" class="btn btn-primary btn-popov" role="button">Подробнее</a>
-                  </div>
-                  </div>
+                <div class="panel panel-info myPanel">
+                    <div class="panel-body">
+                        <div class="profile">
+                            <div class="profile_logo">
+                                <img src="images/profile.png" alt="Фотография моего профиля" class="img-circle img-responsive center-block">
+                            </div>
+                            <h3>Петрова Анастасия Артуровна</h3>
+                            <p><strong>Курс: </strong> 4 курс</p>
+                            <p><strong>Группа: </strong> ИТ-431</p>
+                            <p><strong>Количество предметов на кафедре: </strong> 7</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-3">
-                <div class="thumbnail">
-                  <img src="images/Garagulya-Nikolay-Vladimirovich.png" alt="Гарагуля Николай Владимирович">
-                  <div class="caption">
-                    <div class="FIO">
-                      <h3>Гарагуля Николай Владимирович</h3>
-                    </div>
-                    <div class="position">
-                      <p>Старший преподаватель</p>
-                    </div>
-                    <div class="More">
-                      <a href="dropbox_stud.html" class="btn btn-primary" role="button">Подробнее</a>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="thumbnail">
-                    <img src="images/Zvereva-Oksana-Sergeevna.png" alt="Зверева Оксана Сергеевна">
-                    <div class="caption">
-                      <div class="FIO">
-                        <h3>Зверева Оксана Сергеевна</h3>
-                      </div>
-                      <div class="position">
-                        <p>Старший преподаватель</p>
-                      </div>
-                      <div class="More">
-                        <a href="dropbox_stud.html" class="btn btn-primary btn-zvereva" role="button">Подробнее</a>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="thumbnail">
-                      <img src="images/Zorin-Konstantin-Igorevich.png" alt="Зорин Константин Игоревич">
-                      <div class="caption">
-                        <div class="FIO">
-                          <h3>Зорин Константин Игоревич</h3>
+            </div>
+            <div class="col-md-9">
+                    <h3>Предметы на кафедре</h3>
+                    <div class="row">
+                        <div class="col-md-3 subject_box">
+                            <a href="subject_review_stud.html">
+                                <button type="button" class="btn btn-primary btn_list">
+                                    <p>Программирование интернет приложений</p></button>
+                            </a>
                         </div>
-                        <div class="position">
-                          <p>Ассистент</p>
-                        </div>
-                        <div class="More">
-                          <a href="dropbox_stud.html" class="btn btn-primary btn-zorin" role="button">Подробнее</a>
-                        </div>
-                        </div>
-                      </div>
-                    </div> 
 
-                  <div class="col-md-3">
-                    <div class="thumbnail">
-                      <img src="images/Katykhov-Vadim-Aleksandrovich.png" alt="Катыхов Вадим Александрович">
-                      <div class="caption">
-                        <div class="FIO">
-                          <h3>Катыхов Вадим Александрович</h3>
+                        <div class="col-md-3 subject_box">
+                            <a href="subject_review_stud.html">
+                                <button type="button" class="btn btn-primary btn_list">
+                                    <p>Программирование интернет приложений</p></button>
+                            </a>
                         </div>
-                        <div class="position">
-                          <p>Ассистент</p>
+                        <div class="col-md-3 subject_box">
+                            <a href="subject_review_stud.html">
+                                <button type="button" class="btn btn-primary btn_list">
+                                    <p>Программирование интернет приложений</p></button>
+                            </a>
                         </div>
-                        <div class="More">
-                          <a href="dropbox_stud.html" class="btn btn-primary" role="button">Подробнее</a>
+                        <div class="col-md-3 subject_box">
+                            <a href="subject_review_stud.html">
+                                <button type="button" class="btn btn-primary btn_list">
+                                    <p>Программирование интернет приложений</p></button>
+                            </a>
                         </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                    <div class="thumbnail">
-                      <img src="images/Kiyko-Aleksandr-Vasil'yevich.png" alt="Кийко Александр Васильевич">
-                      <div class="caption">
-                        <div class="FIO">
-                          <h3>Кийко Александр Васильевич</h3>
-                        </div>
-                        <div class="position">
-                          <p>Старший преподаватель</p>
-                        </div>
-                        <div class="More">
-                          <a href="dropbox_stud.html" class="btn btn-primary" role="button">Подробнее</a>
-                        </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                    <div class="thumbnail">
-                      <img src="images/Klyuev-Aleksandr-Aleksandrovich.png" alt="Клюев Александр Александрович">
-                      <div class="caption">
-                        <div class="FIO">
-                          <h3>Клюев Александр Александрович</h3>
-                        </div>
-                        <div class="position">
-                          <p>Кандидат технических наук, доцент</p>
-                        </div>
-                        <div class="More">
-                          <a href="dropbox_stud.html" class="btn btn-primary" role="button">Подробнее</a>
-                        </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                    <div class="thumbnail">
-                      <img src="images/Pogrebnyak-Sergey-Andreevich.png" alt="Погребняк Сергей Андреевич">
-                      <div class="caption">
-                        <div class="FIO">
-                          <h3>Погребняк Сергей Андреевич</h3>
-                        </div>
-                        <div class="position">
-                          <p>Ассистент</p>
-                        </div>
-                        <div class="More">
-                          <a href="dropbox_stud.html" class="btn btn-primary" role="button">Подробнее</a>
-                        </div>
-                        </div>
-                      </div>
                     </div>
 
-                    <div class="col-md-3">
-                    <div class="thumbnail">
-                      <img src="images/Podobryy-Vitaliy-Vital'yevich.png" alt="Подобрый Виталий Витальевич">
-                      <div class="caption">
-                        <div class="FIO">
-                          <h3>Подобрый Виталий Витальевич</h3>
+                    <div class="row">
+                        <div class="col-md-3 subject_box">
+                            <a href="subject_review_stud.html">
+                                <button type="button" class="btn btn-primary btn_list">
+                                    <p>Программирование интернет приложений</p></button>
+                            </a>
                         </div>
-                        <div class="position">
-                          <p>Старший преподаватель</p>
-                        </div>
-                        <div class="More">
-                          <a href="dropbox_stud.html" class="btn btn-primary" role="button">Подробнее</a>
-                        </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                    <div class="thumbnail">
-                      <img src="images/Popova-Lidiya-Valerievna.png" alt="Попова Лидия Валериевна">
-                      <div class="caption">
-                        <div class="FIO">
-                          <h3>Попова Лидия Валериевна</h3>
-                        </div>
-                        <div class="position">
-                          <p>Ассистент</p>
-                        </div>
-                        <div class="More">
-                          <a href="dropbox_stud.html" class="btn btn-primary btn-popova" role="button">Подробнее</a>
-                        </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                    <div class="thumbnail">
-                      <img src="images/Kiyko-Sergey-Aleksandrovich.png" alt="Кийко Сергей Александрович">
-                      <div class="caption">
-                        <div class="FIO">
-                          <h3>Кийко Сергей Александрович</h3>
-                        </div>
-                        <div class="position">
-                          <p>Ассистент</p>
-                        </div>
-                        <div class="More">
-                          <a href="dropbox_stud.html" class="btn btn-primary" role="button">Подробнее</a>
-                        </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                    <div class="thumbnail">
-                      <img src="images/Shcheglov-Yuriy-Evgen'yevich.png" alt="Щеглов Юрий Евгеньевич">
-                      <div class="caption">
-                        <div class="FIO">
-                          <h3>Щеглов Юрий Евгеньевич</h3>
-                        </div>
-                        <div class="position">
-                          <p>Старший преподаватель</p>
-                        </div>
-                        <div class="More">
-                          <a href="dropbox_stud.html" class="btn btn-primary btn-sheglov" role="button">Подробнее</a>
-                        </div>
-                        </div>
-                      </div>
-                    </div>
 
-                  </div>
-                </div>
-              </div>
+                        <div class="col-md-3 subject_box">
+                            <a href="subject_review_stud.html">
+                                <button type="button" class="btn btn-primary btn_list">
+                                    <p>Программирование интернет приложений</p></button>
+                            </a>
+                        </div>
+                        <div class="col-md-3 subject_box">
+                            <a href="subject_review_stud.html">
+                                <button type="button" class="btn btn-primary btn_list">
+                                    <p>Программирование интернет приложений</p></button>
+                            </a>
+                        </div>
+                        <div class="col-md-3 subject_box">
+                            <a href="subject_review_stud.html">
+                                <button type="button" class="btn btn-primary btn_list">
+                                    <p>Программирование интернет приложений</p></button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 subject_box">
+                            <a href="subject_review_stud.html">
+                                <button type="button" class="btn btn-primary btn_list">
+                                    <p>Программирование интернет приложений</p></button>
+                            </a>
+                        </div>
 
-    <div id="footer">
+                        <div class="col-md-3 subject_box">
+                            <a href="subject_review_stud.html">
+                                <button type="button" class="btn btn-primary btn_list">
+                                    <p>Программирование интернет приложений</p></button>
+                            </a>
+                        </div>
+                        <div class="col-md-3 subject_box">
+                            <a href="subject_review_stud.html">
+                                <button type="button" class="btn btn-primary btn_list">
+                                    <p>Программирование интернет приложений</p></button>
+                            </a>
+                        </div>
+                        <div class="col-md-3 subject_box">
+                            <a href="subject_review_stud.html">
+                                <button type="button" class="btn btn-primary btn_list">
+                                    <p>Программирование интернет приложений</p></button>
+                            </a>
+                        </div>
+                    </div>
+        </div>
     </div>
+</div>
+
+<div id="footer">
+</div>
 
 
-    <!-- jQuery (необходим для JavaScript плагинов Bootstrap) -->
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+<!-- jQuery (необходим для JavaScript плагинов Bootstrap) -->
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
 
-    <!-- Подключите все скомпилированные плагины (ниже)
-    или добавьте другие файлы при необходимости -->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  </body>
+<!-- Подключите все скомпилированные плагины (ниже)
+или добавьте другие файлы при необходимости -->
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Плагин Jasny Bootstrap -->
+<script src="node_modules/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+
+<script>
+    $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+    });
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        e.target // activated tab
+        e.relatedTarget // previous tab
+    });
+</script>
+
+</body>
 </html>

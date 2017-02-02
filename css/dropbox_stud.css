@@ -1,0 +1,81 @@
+body{
+	background: #cccccc;
+	color: #868585;
+}
+header{
+	margin: 45px 0px 15px;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-weight: normal;
+}
+.tableFiles .tableGroups{
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 16px;
+}
+.tableGroups{
+	margin-top: 5px;
+}
+label{
+	font-family: 'Ubuntu Condensed', sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+}
+.menu{
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+.navbar-brand{
+	padding-right: 80px;
+}
+.navbar-brand img{
+	position: relative;
+	top: -40px;	
+	padding-left: 45px;
+}
+.navbar-header{
+	width: 220px;
+}
+.navbar-form{
+	padding-left: 75px;
+	padding-right: 0;
+}
+.navbar-form .form-control {
+	display: inline-block;
+	width: 225px;
+	vertical-align: middle;
+}
+.submenu-right {
+    margin-right: 10px;
+}
+.navbar-default .navbar-nav>li>a{
+	color: #8d8c8c;
+	font-size: 19px;
+	text-transform: uppercase;
+}
+.navbar-default .navbar-nav:not(.icons)>li>a:hover{
+	border-bottom: 1px solid #336699;
+	color: #8d8c8c;
+}
+.btn.btn-default{
+	color: #8d8c8c;
+}
+.nav.nav-pills.nav-stacked{
+	margin-left: 65px;
+}
+.fa{
+	padding-right: 6px;
+}
+.sidebar{
+	padding-top: 50px;
+	width: 20%;
+}
+.tab-paneGroups{
+	padding-top: 50px;
+}
+
+/*!*Tablet landscape*!*/
+/*@media screen and (min-width: 768px) and (max-width: 1024px){*/
+	/*.col-md-9{*/
+	/*min-width: 755px;*/
+	/*}*/
+/*}*/
