@@ -58,13 +58,11 @@ label{
 	width: 180px;
 	margin: 7px;
 }
-.h3, h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    text-align: center;
-    font-family: 'PT Sans Narrow', sans-serif;
+h3 {
+	font-family: 'Ubuntu Condensed', sans-serif;
 	font-weight: normal;
-	color: #336699;
+	text-align: center;
+	margin-top: 0;
 }
 .btn_list{
 	width: 170px;
