@@ -1,0 +1,92 @@
+body{
+    background: #cccccc;
+    color: #868585;
+    position: relative;
+    overflow-x: hidden;
+}
+header{
+    margin: 45px 0px 55px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: normal;
+}
+h3{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 0;
+}
+p{
+    font-size: 16px;
+    white-space: pre-line;
+    width: 170px;
+    margin: 0 0 4px;
+}
+p>strong{
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+.menu{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+.navbar-brand{
+    padding-right: 80px;
+}
+.navbar-brand img{
+    position: relative;
+    top: -40px;
+    padding-left: 45px;
+}
+.navbar-header{
+    width: 220px;
+}
+.navbar-right {
+    margin-right: 10px;
+}
+.navbar-default .navbar-nav>li>a{
+    color: #8d8c8c;
+    font-size: 19px;
+    text-transform: uppercase;
+}
+.navbar-default .navbar-nav>li.active-link>a{
+    border-bottom: 1px solid #336699;
+}
+.navbar-default .navbar-nav:not(.icons)>li>a:hover{
+    border-bottom: 1px solid #336699;
+    color: #8d8c8c;
+}
+.navbar-formюnavbar-left{
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+    margin: 0;
+}
+.btn.btn-default{
+    color: #8d8c8c;
+}
+.myPanel{
+    background-color: #e7e7e7;
+}
+.profile_logo{
+    margin-bottom: 10px;
+}
+.subject_box{
+    margin-bottom: 15px;
+}
+.btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:visited{
+    background-color: green;
+    border-color: green;
+    color: white;
+}
+/*.subject_box{*/
+/*background: linear-gradient(to top,paleturquoise, white);*/
+/*border-radius: 10px;*/
+/*padding: 0;*/
+/*width: 180px;*/
+/*margin: 5px 18px;*/
+/*}*/
+/*.btn_list{*/
+/*width: 170px;*/
+/*height: 170px;*/
+/*padding: 0;*/
+/*margin: 5px;*/
+/*}*/

@@ -52,6 +52,9 @@ label{
 	font-size: 19px;
 	text-transform: uppercase;
 }
+.navbar-default .navbar-nav>li.active-link>a{
+	border-bottom: 1px solid #336699;
+}
 .navbar-default .navbar-nav:not(.icons)>li>a:hover{
 	border-bottom: 1px solid #336699;
 	color: #8d8c8c;
