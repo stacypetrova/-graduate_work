@@ -43,17 +43,20 @@ p>strong{
 .navbar-right {
     margin-right: 10px;
 }
+.navbar-default {
+    background-color: thistle;
+}
 .navbar-default .navbar-nav>li>a{
-    color: #8d8c8c;
+    color: indigo;
     font-size: 19px;
     text-transform: uppercase;
 }
 .navbar-default .navbar-nav>li.active-link>a{
-    border-bottom: 1px solid #336699;
+    border-bottom: 1px solid indigo;
 }
 .navbar-default .navbar-nav:not(.icons)>li>a:hover{
-    border-bottom: 1px solid #336699;
-    color: #8d8c8c;
+    border-bottom: 1px solid mediumorchid;
+    color: indigo;
 }
 .navbar-formюnavbar-left{
     background-color: #f8f8f8;
