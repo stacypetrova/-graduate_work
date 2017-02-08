@@ -17,9 +17,6 @@ label{
     font-weight: bold;
     font-size: 16px;
 }
-.navbar-default {
-    background-color: thistle;
-}
 .menu{
     border: 0;
     padding: 0;
@@ -51,6 +48,9 @@ label{
 .submenu-right {
     margin-right: 10px;
 }
+.navbar-default {
+    background-color: thistle;
+}
 .navbar-default .navbar-nav>li>a{
     color: indigo;
     font-size: 19px;
@@ -81,4 +81,8 @@ label{
 }
 .chooseFile{
     padding-top: 15px;
+}
+.save_file{
+    text-align: right;
+    padding-bottom: 10px;
 }

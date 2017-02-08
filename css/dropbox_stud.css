@@ -70,15 +70,7 @@ label{
 }
 .sidebar{
 	padding-top: 50px;
-	width: 20%;
 }
 .tab-paneGroups{
 	padding-top: 50px;
 }
-
-/*!*Tablet landscape*!*/
-/*@media screen and (min-width: 768px) and (max-width: 1024px){*/
-	/*.col-md-9{*/
-	/*min-width: 755px;*/
-	/*}*/
-/*}*/

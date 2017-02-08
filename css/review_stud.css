@@ -51,18 +51,15 @@ label{
 .btn.btn-default{
 	color: #8d8c8c;
 }
-.nav.nav-pills.nav-stacked{
-	margin-left: 65px;
-}
 .fa{
 	padding-right: 6px;
 }
 .content{
-	padding-top: 50px;
+	padding-top: 35px;
 }
-/*.col-md-3{*/
-	/*padding-top: 50px;*/
-/*}*/
+.review_table{
+	padding-left: 10%;
+}
 .sidebar{
 	padding-top: 50px;
 	width: 20%;

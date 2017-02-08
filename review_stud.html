@@ -59,41 +59,6 @@
   				</div><!-- /.navbar-collapse -->
   				<div class="submenu">
   					<ul class="nav navbar-nav navbar-right submenu-right">
-  						<li class="btn_add_categ">
-  							<!-- Модальное окно на добавление категории -->
-  							<button class="btn btn-success" data-toggle="modal" data-target="#myModal">
-  								<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-  								Добавить предмет
-  							</button>
-
-  							<!-- Modal -->
-  							<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  								<div class="modal-dialog">
-  									<div class="modal-content">
-  										<div class="modal-header">
-  											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-  											<h4 class="modal-title" id="myModalLabel">Добавление предмета</h4>
-  										</div>
-  										<div class="modal-body">
-  											<form>
-  												<div class="form-group">
-  													<label for="name_subject">Название предмета:</label>
-  													<input type="text" class="form-control" id="name_subject">
-  												</div>
-  												<div class="form-group">
-  													<label for="description">Описание предмета:</label>
-  													<textarea class="form-control" rows="3" id="description"></textarea>
-  												</div>
-  											</form>
-  										</div>
-  										<div class="modal-footer">
-  											<button type="button" class="btn btn-danger" data-dismiss="modal">Закрыть</button>
-  											<button type="button" class="btn btn-success">Сохранить</button>
-  										</div>
-  									</div>
-  								</div>
-  							</div>
-  						</li>
   						<li role="search">
   							<form class="navbar-form">
   								<div class="form-group">
@@ -108,102 +73,17 @@
   		</nav>
   	</header>
 
-
-  	<div class="row">
-  		<div class="col-md-3 sidebar">
-  			<div class="left_menu">
-  				<ul class="nav nav-pills nav-stacked"  id="myTab">
-  					<li class="active"><a href="#files" data-toggle="tab"><span class="fa fa-files-o" aria-hidden="true"></span>Файлы</a></li>
-  					<li><a href="#groups" data-toggle="tab"><span class="fa fa-users" aria-hidden="true"></span>Группы</a></li>
-  				</ul>
-  			</div>
-  		</div>
-
-		<div class="col-md-9 content">
-			<div class="tab-content">
-				<div class="tab-pane active" id="files">
-					<div class="row">
-						<div class="col-md-9">
-							<div class="table-responsive">
-								<table class="table table-bordered table-hover">
-									<tr>
-										<td class="stolbec_width">Наименование предмета</td>
-										<td>Программирование интернет приложений</td>
-									</tr>
-									<tr>
-										<td class="stolbec_width">Преподаватель</td>
-										<td>Попов Сергей Валерьевич</td>
-									</tr>
-									<tr>
-										<td class="stolbec_width">Тип занятия</td>
-										<td>Практика</td>
-									</tr>
-									<tr>
-										<td class="stolbec_width">Наименовапние файла</td>
-										<td>Резюме Технический писатель</td>
-									</tr>
-									<tr>
-										<td class="stolbec_width">Добавлено</td>
-										<td>17.06.2016 0:15</td>
-									</tr>
-									<tr>
-										<td class="stolbec_width">Расширение файла</td>
-										<td>docx</td>
-									</tr>
-									<tr>
-										<td class="stolbec_width">Описание</td>
-										<td>Резюме (от фр. résumé или лат. curriculum vitae — «течение жизни», жизнеописание,
-											произносится кури́кулюм ви́тэ, часто сокращают до CV, в советской традиции
-											автобиография) — документ, содержащий информацию о навыках, опыте работы,
-											образовании и другую относящуюся к делу информацию, обычно требуемую при
-											рассмотрении кандидатуры человека для найма на работу.
-										</td>
-									</tr>
-								</table>
-								<div class="btn_nazad">
-									<a class="btn btn-primary" href="dropbox.html" role="button">Назад</a>
-									<button type="button" class="btn btn-success download"><span
-											class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span>Скачать
-									</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<img class="img-thumbnail" src="images/Popov-Sergey-Valer'yevich.png" alt="Попов Сергей Валерьевич"  title="Попов Сергей Валерьевич">
-						</div>
-					</div>
-				</div>
-				<div class="tab-pane" id="groups">
-                    <select class="selectpicker" title="Выберите курс" data-width="fit" disabled>
-						<optgroup label="Бакалавриат">
-							<option>1 курс</option>
-							<option>2 курс</option>
-							<option>3 курс</option>
-							<option>4 курс</option>
-						</optgroup>
-						<optgroup label="Магистратура">
-							<option>5 курс</option>
-							<option>6 курс</option>
-						</optgroup>
-					</select>
-					<select class="selectpicker" title="Выберите группу" data-width="fit" data-live-search="true" disabled>
-						<optgroup>
-							<option>ИТ-431</option>
-							<option>ИТ-432</option>
-							<option>ИТ-433</option>
-							<option>ИТ-441</option>
-							<option>ИТ-442</option>
-							<option>ИТ-443</option>
-							<option>ИТ-451</option>
-							<option>ИТ-452</option>
-							<option>ИТ-461</option>
-							<option>ИТ-462</option>
-							<option>ИТ-451м</option>
-							<option>ИТ-461м</option>
-						</optgroup>
-					</select>
-                    <a name="anchorGroup"></a>
-						<table class="table table-bordered table-hover tableGroups">
+<!--Внутренности-->
+	<div class="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9 review_table">
+					<div class="table-responsive">
+						<table class="table table-bordered table-hover">
+							<tr>
+								<td class="stolbec_width">Наименовапние файла</td>
+								<td>Резюме Технический писатель</td>
+							</tr>
 							<tr>
 								<td class="stolbec_width">Наименование предмета</td>
 								<td>Программирование интернет приложений</td>
@@ -213,12 +93,12 @@
 								<td>Попов Сергей Валерьевич</td>
 							</tr>
 							<tr>
-								<td class="stolbec_width">Тип занятия</td>
-								<td>Практика</td>
+								<td class="stolbec_width">Курс</td>
+								<td>4 курс</td>
 							</tr>
 							<tr>
-								<td class="stolbec_width">Наименовапние файла</td>
-								<td>Резюме Технический писатель</td>
+								<td class="stolbec_width">Группа</td>
+								<td>ИТ-431</td>
 							</tr>
 							<tr>
 								<td class="stolbec_width">Добавлено</td>
@@ -238,16 +118,20 @@
 								</td>
 							</tr>
 						</table>
-						<div class="btnNazadGroups">
-							<a class="btn btn-primary" href="dropbox.html" role="button">Назад</a>
+						<div class="btn_nazad">
+							<a class="btn btn-primary" href="dropbox_stud.html" role="button">Назад</a>
 							<button type="button" class="btn btn-success download"><span
 									class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span>Скачать
 							</button>
 						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<img class="img-thumbnail" src="images/Popov-Sergey-Valer'yevich.png" alt="Попов Сергей Валерьевич"  title="Попов Сергей Валерьевич">
 				</div>
 			</div>
-  		</div>
-  	</div>
+		</div>
+	</div>
 
 	<!-- jQuery (необходим для JavaScript плагинов Bootstrap) -->
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>

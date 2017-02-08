@@ -3,16 +3,9 @@ body{
 	color: #868585;
 }
 header{
-	margin: 45px 0px 15px;
+	margin: 45px 0px 30px;
 	font-family: 'PT Sans Narrow', sans-serif;
 	font-weight: normal;
-}
-.tableFiles .tableGroups{
-	font-family: 'PT Sans Narrow', sans-serif;
-	font-size: 16px;
-}
-.tableGroups{
-	margin-top: 5px;
 }
 label{
 	font-family: 'Ubuntu Condensed', sans-serif;
@@ -36,13 +29,8 @@ label{
 	width: 220px;
 }
 .navbar-form{
-	padding-left: 75px;
+	padding-left: 5px;
 	padding-right: 0;
-}
-.navbar-form .form-control {
-	display: inline-block;
-	width: 225px;
-	vertical-align: middle;
 }
 .submenu-right {
     margin-right: 10px;
@@ -65,22 +53,31 @@ label{
 .btn.btn-default{
 	color: #8d8c8c;
 }
-.nav.nav-pills.nav-stacked{
-	margin-left: 65px;
+
+.col-md-4{
+	background: linear-gradient(to top,paleturquoise, white);
+	border-radius: 10px;
+	padding: 0;
+	width: 180px;
+	margin: 7px;
 }
-.fa{
-	padding-right: 6px;
+h3 {
+	font-family: 'Ubuntu Condensed', sans-serif;
+	font-weight: normal;
+	text-align: center;
+	margin-top: 0;
 }
-.sidebar{
-	padding-top: 50px;
+.btn_list{
+	width: 170px;
+	height: 170px;
+	padding: 0;
+	margin: 5px;
 }
-.tab-paneGroups{
-	padding-top: 50px;
+p{
+	white-space: pre-line;
+	width: 170px;
+	margin-right: 20px; 
+	width: 170px;
+	margin: 0;
 }
 
-/*!*Tablet landscape*!*/
-/*@media screen and (min-width: 768px) and (max-width: 1024px){*/
-	/*.col-md-9{*/
-	/*min-width: 755px;*/
-	/*}*/
-/*}*/
