@@ -1,0 +1,30 @@
+h3{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 0;
+}
+p{
+    font-size: 16px;
+    white-space: pre-line;
+    width: 170px;
+    margin: 0 0 4px;
+}
+p>strong{
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+.myPanel{
+    background-color: #e7e7e7;
+    margin-top: 20px;
+}
+.profile_logo{
+    margin-bottom: 10px;
+}
+.subject_box{
+    margin-bottom: 15px;
+}
+.btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:visited{
+    background-color: cadetblue;
+    border-color: cadetblue;
+    color: white;
+}
