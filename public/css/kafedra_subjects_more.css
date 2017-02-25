@@ -1,0 +1,39 @@
+h1{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-weight: normal;
+    font-size: 28px;
+}
+h3{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-weight: normal;
+    margin-top: 0;
+}
+.container{
+    padding-top: 20px;
+}
+.thumbnail{
+    width: 250px;
+    height: 320px;
+}
+.thumbnail img{
+    margin-top: 5px;
+    width: 150px;
+    height: 217px;
+}
+.FIO{
+    width: 220px;
+    height: 52px;
+}
+.position{
+    width: 242px;
+    height: 40px;
+}
+.col-md-4{
+    padding: 15px;
+}
+.myPanel{
+    background-color: #e7e7e7;
+}
+.panel-body{
+    padding-bottom: 0;
+}

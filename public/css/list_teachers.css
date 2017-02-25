@@ -1,0 +1,31 @@
+h3{
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-weight: normal;
+	margin: 0;
+}
+p{
+	font-family: 'PT Sans', sans-serif;
+	font-weight: normal;
+}
+.thumbnail{
+	width: 270px;
+	height: 415px;
+}
+.thumbnail img{
+	margin-top: 12px;
+	width: 175px;
+	height: 247px;
+}
+.FIO{
+	width: 220px;
+	height: 52px;
+}
+.position{
+	width: 242px;
+	height: 40px;
+}
+.More{
+	width: 242px;
+	height: 34px;
+	padding-top: 5px;
+}

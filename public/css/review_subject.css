@@ -1,0 +1,27 @@
+h3{
+    margin: 0;
+}
+.tableFiles{
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 16px;
+}
+.thumbnail{
+    width: 270px;
+    height: 395px;
+}
+.thumbnail img{
+    margin-top: 12px;
+    width: 175px;
+    height: 247px;
+}
+.FIO{
+    width: 220px;
+    height: 52px;
+}
+.position{
+    width: 242px;
+    height: 40px;
+}
+.foto_teacher{
+    padding-top: 50px;
+}

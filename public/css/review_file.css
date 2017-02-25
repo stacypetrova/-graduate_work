@@ -1,0 +1,44 @@
+label{
+	font-family: 'Ubuntu Condensed', sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+}
+.content{
+	padding-top: 35px;
+}
+.review_table{
+	padding-left: 10%;
+}
+.stolbec_width{
+	width: 220px;
+	color: #337ab7;
+}
+.table{
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 16px;
+	background-color: ghostwhite;
+	margin-bottom: 14px;
+}
+.btn_nazad{
+	padding-bottom: 10px;
+	text-align: right;
+}
+.btn-primary{
+	width: 90px;
+	margin-left: 5px;
+}
+.download{
+	width: 110px;
+	margin-left: 5px;
+}
+.glyphicon-download-alt{
+	padding-right: 6px;
+}
+.tableGroups{
+	width: 885px;
+	margin-top: 5px;
+}
+.btnNazadGroups{
+	width: 885px;
+	text-align: right;
+}
