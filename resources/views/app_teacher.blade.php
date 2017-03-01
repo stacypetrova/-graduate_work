@@ -33,15 +33,15 @@
         <div class="container-fluid">
             <!-- Бренд и переключатель группируются для лучшего отображения на дисплеях мобильных телефонов -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="index_teacher.html"><img src="/images/logo_ru.png" alt="Логотип Луганского национального университета"></a>
+                <a class="navbar-brand" href="{{route('profile_teacher')}}"><img src="/images/logo_ru.png" alt="Логотип Луганского национального университета"></a>
             </div>
 
             <!-- Сбор навигационных ссылок, форм и другого контента для переключения -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav first_menu">
-                    <li class="active-link"><a href="index_teacher.html">Мой профиль</a></li>
-                    <li><a href="teachers_teacher.html">Преподаватели</a></li>
-                    <li><a href="subject_teacher.html">Предметы на кафедре</a></li>
+                    <li class="active-link"><a href="{{route('profile_teacher')}}">Мой профиль</a></li>
+                    <li><a href="{{route('list_teachers')}}">Преподаватели</a></li>
+                    <li><a href="{{route('list_subjects')}}">Предметы на кафедре</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -68,17 +68,26 @@
     </nav>
 </header>
 
-
 @yield('content')
 
-<!-- jQuery (необходим для JavaScript плагинов Bootstrap) -->
-<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery (необходим для JavaScript плагинов Bootstrap) -->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
 
-<!-- Подключите все скомпилированные плагины (ниже)
-или добавьте другие файлы при необходимости -->
-<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Плагин Jasny Bootstrap -->
-<script src="/node_modules/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+    <!-- Подключите все скомпилированные плагины (ниже)
+    или добавьте другие файлы при необходимости -->
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Плагин Jasny Bootstrap -->
+    <script src="/node_modules/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+
+    <script>
+        $(".nav-tabs a").click(function(){
+            $(this).tab('show');
+        });
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            e.target // activated tab
+            e.relatedTarget // previous tab
+        });
+    </script>
 
 </body>
 </html>

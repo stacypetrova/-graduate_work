@@ -1,0 +1,13 @@
+.tableFiles .tableGroups{
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 16px;
+}
+.tableGroups{
+    margin-top: 5px;
+}
+.sidebar{
+    padding-top: 50px;
+}
+.tab-paneGroups{
+    padding-top: 50px;
+}

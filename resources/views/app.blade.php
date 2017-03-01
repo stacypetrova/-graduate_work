@@ -32,16 +32,16 @@
         <div class="container-fluid">
             <!-- Бренд и переключатель группируются для лучшего отображения на дисплеях мобильных телефонов -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html"><img src="/images/logo_ru.png"
+                <a class="navbar-brand" href="{{route('profile_student')}}"><img src="/images/logo_ru.png"
                                                                alt="Логотип Луганского национального университета"></a>
             </div>
 
             <!-- Сбор навигационных ссылок, форм и другого контента для переключения -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav first_menu">
-                    <li><a href="index.html">Мои предметы</a></li>
-                    <li><a href="teachers_stud.html">Преподаватели</a></li>
-                    <li><a href="subject_stud.html">Предметы на кафедре</a></li>
+                    <li><a href="{{route('profile_student')}}">Мои предметы</a></li>
+                    <li><a href="{{route('list_teachers')}}">Преподаватели</a></li>
+                    <li><a href="{{route('list_subjects')}}">Предметы на кафедре</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -56,6 +56,7 @@
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
+
             <div class="submenu">
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">

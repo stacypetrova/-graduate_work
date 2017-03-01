@@ -9,60 +9,60 @@
             <h3>Предметы на кафедре</h3>
             <div class="row">
                 <div class="col-md-4 ">
-                    <a href="subject_review_stud.html">
+                    <a href="{{route('subjects_more')}}">
                         <button type="button" class="btn btn-info btn_list">
                             <p>Программирование интернет приложений</p></button>
                     </a>
                 </div>
 
                 <div class="col-md-4">
-                    <a href="subject_review_stud.html">
+                    <a href="{{route('subjects_more')}}">
                         <button type="button" class="btn btn-info btn_list">
                             <p>Программирование интернет приложений</p></button>
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="subject_review_stud.html">
-                        <button type="button" class="btn btn-info btn_list">
-                            <p>Программирование интернет приложений</p></button>
-                    </a>
-                </div>
-
-                <div class="col-md-4 ">
-                    <a href="subject_review_stud.html">
-                        <button type="button" class="btn btn-info btn_list">
-                            <p>Программирование интернет приложений</p></button>
-                    </a>
-                </div>
-
-                <div class="col-md-4">
-                    <a href="subject_review_stud.html">
-                        <button type="button" class="btn btn-info btn_list">
-                            <p>Программирование интернет приложений</p></button>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="subject_review_stud.html">
+                    <a href="{{route('subjects_more')}}">
                         <button type="button" class="btn btn-info btn_list">
                             <p>Программирование интернет приложений</p></button>
                     </a>
                 </div>
 
                 <div class="col-md-4 ">
-                    <a href="subject_review_stud.html">
+                    <a href="{{route('subjects_more')}}">
                         <button type="button" class="btn btn-info btn_list">
                             <p>Программирование интернет приложений</p></button>
                     </a>
                 </div>
 
                 <div class="col-md-4">
-                    <a href="subject_review_stud.html">
+                    <a href="{{route('subjects_more')}}">
                         <button type="button" class="btn btn-info btn_list">
                             <p>Программирование интернет приложений</p></button>
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="subject_review_stud.html">
+                    <a href="{{route('subjects_more')}}">
+                        <button type="button" class="btn btn-info btn_list">
+                            <p>Программирование интернет приложений</p></button>
+                    </a>
+                </div>
+
+                <div class="col-md-4 ">
+                    <a href="{{route('subjects_more')}}">
+                        <button type="button" class="btn btn-info btn_list">
+                            <p>Программирование интернет приложений</p></button>
+                    </a>
+                </div>
+
+                <div class="col-md-4">
+                    <a href="{{route('subjects_more')}}">
+                        <button type="button" class="btn btn-info btn_list">
+                            <p>Программирование интернет приложений</p></button>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="{{route('subjects_more')}}">
                         <button type="button" class="btn btn-info btn_list">
                             <p>Программирование интернет приложений</p></button>
                     </a>

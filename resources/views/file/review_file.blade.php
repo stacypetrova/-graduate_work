@@ -50,7 +50,7 @@
                             </tr>
                         </table>
                         <div class="btn_nazad">
-                            <a class="btn btn-primary" href="dropbox_stud.html" role="button">Назад</a>
+                            <a class="btn btn-primary" href="{{route('dropbox_student')}}" role="button">Назад</a>
                             <button type="button" class="btn btn-success download"><span
                                         class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span>Скачать
                             </button>

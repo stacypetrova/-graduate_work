@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Bootstrap-table (плагин) -->
-    <link rel="stylesheet" href="/node_modules/bootstrap-table/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap-table/dist/bootstrap-table.css">
     <link rel="stylesheet" href="/css/review_subject.css">
 
     <div class="content">
@@ -48,7 +48,7 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td><a href="review_stud.html">Резюме Технический писатель</a></td>
+                            <td><a href="{{route('review_file')}}">Резюме Технический писатель</a></td>
                             <td>17.06.2016 0:15</td>
                             <td>docx</td>
                             <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
@@ -117,9 +117,6 @@
     <script>
         var $table = $('#table');
         $(function () {
-        });
-        $('.selectpicker').selectpicker({
-            size: 8
         });
     </script>
 

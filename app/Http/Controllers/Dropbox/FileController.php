@@ -21,16 +21,28 @@ class FileController extends Controller
         return view('file.list_file_student');
     }
 
-//    Список файлов для преподавателя
+//    Список файлов для преподавателя (с возможностью добавить новый файл, профиль преподавателя)
     public function ListFileTeacher()
     {
         return view('file.list_file_teacher');
     }
 
-//    Подробный просмотр файлов для студента/преподавателя
+//    Список файлов преподавателя (без возможности добавить новый файл, профиль студента)
+    public function ReviewListFileTeacher()
+    {
+        return view('file.review_list_file_teacher');
+    }
+
+//    Подробный просмотр файла для студента/преподавателя
     public function ReviewFile()
     {
         return view('file.review_file');
+    }
+
+//    Добавление нового файла преподавателем
+    public function AddNewFile()
+    {
+        return view('file.add_file');
     }
 
     public function index()

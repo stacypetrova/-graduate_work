@@ -5,7 +5,7 @@ body{
     overflow-x: hidden;
 }
 header{
-    margin: 45px 0px 55px;
+    margin: 45px 0px 35px;
     font-family: 'PT Sans Narrow', sans-serif;
     font-weight: normal;
 }
@@ -28,16 +28,10 @@ header{
 .navbar-right{
     margin-right: 10px;
 }
-.navbar-default{
-    background-color: thistle;
-}
 .navbar-default .navbar-nav>li>a{
     color: indigo;
     font-size: 19px;
     text-transform: uppercase;
-}
-.navbar-default .navbar-nav>li.active-link>a{
-    border-bottom: 1px solid indigo;
 }
 .navbar-default .navbar-nav:not(.icons)>li>a:hover{
     border-bottom: 1px solid mediumorchid;
@@ -46,3 +40,6 @@ header{
 .btn.btn-default{
     color: #8d8c8c;
 }
+.navbar-default{
+     background-color: thistle;
+ }

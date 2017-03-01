@@ -25,26 +25,26 @@
                     <h3>Мои предметы</h3>
                     <div class="row">
                         <div class="col-md-3 subject_box">
-                            <a href="profile/show_list">
+                            <a href="{{route('dropbox_student')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
                         </div>
 
                         <div class="col-md-3 subject_box">
-                            <a href="profile/show_list">
+                            <a href="{{route('dropbox_student')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
                         </div>
                         <div class="col-md-3 subject_box">
-                            <a href="profile/show_list">
+                            <a href="{{route('dropbox_student')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
                         </div>
                         <div class="col-md-3 subject_box">
-                            <a href="profile/show_list">
+                            <a href="{{route('dropbox_student')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
@@ -53,26 +53,26 @@
 
                     <div class="row">
                         <div class="col-md-3 subject_box">
-                            <a href="profile/show_list">
+                            <a href="{{route('dropbox_student')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
                         </div>
 
                         <div class="col-md-3 subject_box">
-                            <a href="profile/show_list">
+                            <a href="{{route('dropbox_student')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
                         </div>
                         <div class="col-md-3 subject_box">
-                            <a href="profile/show_list">
+                            <a href="{{route('dropbox_student')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
                         </div>
                         <div class="col-md-3 subject_box">
-                            <a href="profile/show_list">
+                            <a href="{{route('dropbox_student')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
@@ -80,26 +80,26 @@
                     </div>
                     <div class="row">
                         <div class="col-md-3 subject_box">
-                            <a href="profile/show_list">
+                            <a href="{{route('dropbox_student')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
                         </div>
 
                         <div class="col-md-3 subject_box">
-                            <a href="profile/show_list">
+                            <a href="{{route('dropbox_student')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
                         </div>
                         <div class="col-md-3 subject_box">
-                            <a href="profile/show_list">
+                            <a href="{{route('dropbox_student')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
                         </div>
                         <div class="col-md-3 subject_box">
-                            <a href="profile/show_list">
+                            <a href="{{route('dropbox_student')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>

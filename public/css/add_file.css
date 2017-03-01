@@ -1,0 +1,28 @@
+h1{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-weight: normal;
+    font-size: 28px;
+}
+.container{
+    width: 60%;
+}
+#name_file, #description {
+    width: 100%;
+}
+.kurs{
+    padding-right: 5px;
+}
+.group{
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.subject{
+    padding-left: 5px;
+}
+.chooseFile{
+    padding-top: 15px;
+}
+.save_file{
+    text-align: right;
+    padding-bottom: 10px;
+}

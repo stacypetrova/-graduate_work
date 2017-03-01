@@ -24,26 +24,26 @@
                     <h3>Предметы</h3>
                     <div class="row">
                         <div class="col-md-3 subject_box">
-                            <a href="dropbox_teacher.html">
+                            <a href="{{route('dropbox_teacher')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
                         </div>
 
                         <div class="col-md-3 subject_box">
-                            <a href="dropbox_teacher.html">
+                            <a href="{{route('dropbox_teacher')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
                         </div>
                         <div class="col-md-3 subject_box">
-                            <a href="dropbox_teacher.html">
+                            <a href="{{route('dropbox_teacher')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
                         </div>
                         <div class="col-md-3 subject_box">
-                            <a href="dropbox_teacher.html">
+                            <a href="{{route('dropbox_teacher')}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
@@ -52,19 +52,10 @@
                 </div>
             </div>
         </div>
-
-        <div id="footer">
-        </div>
+    </div>
 
 
         <!-- jQuery (необходим для JavaScript плагинов Bootstrap) -->
         <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-
-        <!-- Подключите все скомпилированные плагины (ниже)
-        или добавьте другие файлы при необходимости -->
-        <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!-- Плагин Jasny Bootstrap -->
-        <script src="/node_modules/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
-
 
 @stop

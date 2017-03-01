@@ -18,7 +18,23 @@
                                 <p>Должность</p>
                             </div>
                             <div class="More">
-                                <a href="dropbox_stud.html" class="btn btn-primary btn-popov" role="button">Подробнее</a>
+                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary btn-popov" role="button">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img src="\images/foto.png" alt="Фамилия Имя Отчество">
+                        <div class="caption">
+                            <div class="FIO">
+                                <h3>Фамилия Имя Отчество</h3>
+                            </div>
+                            <div class="position">
+                                <p>Должность</p>
+                            </div>
+                            <div class="More">
+                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary" role="button">Подробнее</a>
                             </div>
                         </div>
                     </div>
@@ -34,7 +50,7 @@
                                 <p>Должность</p>
                             </div>
                             <div class="More">
-                                <a href="dropbox_stud.html" class="btn btn-primary" role="button">Подробнее</a>
+                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary btn-zvereva" role="button">Подробнее</a>
                             </div>
                         </div>
                     </div>
@@ -50,88 +66,7 @@
                                 <p>Должность</p>
                             </div>
                             <div class="More">
-                                <a href="dropbox_stud.html" class="btn btn-primary btn-zvereva" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="dropbox_stud.html" class="btn btn-primary btn-zorin" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="dropbox_stud.html" class="btn btn-primary" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="dropbox_stud.html" class="btn btn-primary" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="dropbox_stud.html" class="btn btn-primary" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="dropbox_stud.html" class="btn btn-primary" role="button">Подробнее</a>
+                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary btn-zorin" role="button">Подробнее</a>
                             </div>
                         </div>
                     </div>
@@ -148,7 +83,7 @@
                                 <p>Должность</p>
                             </div>
                             <div class="More">
-                                <a href="dropbox_stud.html" class="btn btn-primary" role="button">Подробнее</a>
+                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary" role="button">Подробнее</a>
                             </div>
                         </div>
                     </div>
@@ -164,7 +99,7 @@
                                 <p>Должность</p>
                             </div>
                             <div class="More">
-                                <a href="dropbox_stud.html" class="btn btn-primary btn-popova" role="button">Подробнее</a>
+                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary" role="button">Подробнее</a>
                             </div>
                         </div>
                     </div>
@@ -180,7 +115,7 @@
                                 <p>Должность</p>
                             </div>
                             <div class="More">
-                                <a href="dropbox_stud.html" class="btn btn-primary" role="button">Подробнее</a>
+                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary" role="button">Подробнее</a>
                             </div>
                         </div>
                     </div>
@@ -196,7 +131,72 @@
                                 <p>Должность</p>
                             </div>
                             <div class="More">
-                                <a href="dropbox_stud.html" class="btn btn-primary btn-sheglov" role="button">Подробнее</a>
+                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary" role="button">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
+                        <div class="caption">
+                            <div class="FIO">
+                                <h3>Фамилия Имя Отчество</h3>
+                            </div>
+                            <div class="position">
+                                <p>Должность</p>
+                            </div>
+                            <div class="More">
+                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary" role="button">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
+                        <div class="caption">
+                            <div class="FIO">
+                                <h3>Фамилия Имя Отчество</h3>
+                            </div>
+                            <div class="position">
+                                <p>Должность</p>
+                            </div>
+                            <div class="More">
+                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary btn-popova" role="button">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
+                        <div class="caption">
+                            <div class="FIO">
+                                <h3>Фамилия Имя Отчество</h3>
+                            </div>
+                            <div class="position">
+                                <p>Должность</p>
+                            </div>
+                            <div class="More">
+                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary" role="button">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
+                        <div class="caption">
+                            <div class="FIO">
+                                <h3>Фамилия Имя Отчество</h3>
+                            </div>
+                            <div class="position">
+                                <p>Должность</p>
+                            </div>
+                            <div class="More">
+                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary btn-sheglov" role="button">Подробнее</a>
                             </div>
                         </div>
                     </div>
