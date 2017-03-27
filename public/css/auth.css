@@ -1,0 +1,69 @@
+body{
+    background: #cccccc;
+    color: #868585;
+    position: relative;
+    overflow-x: hidden;
+}
+header{
+    margin: 45px 0px 55px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: normal;
+    text-align: center;
+}
+h1{
+    font-size: 42px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+label{
+    font-size: 16px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-weight: normal;
+}
+/*Кнопки авторизвции*/
+.remember_me{
+    line-height: 20px;
+}
+.enter{
+    margin-right: 10px;
+}
+.auth_buttons{
+    padding-left: 55px;
+}
+.remember{
+    margin-bottom: 3px;
+}
+
+/*Цветовая гамма блока авторизации*/
+.panel-default {
+    border-color: #5585cf;
+    color: #7f8082;
+}
+.panel-title {
+    color: white!important;
+}
+.panel-default>.panel-heading {
+    background-color: #5585cf;
+    border-color: #5585cf;
+}
+
+
+.menu{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    height: 150px;
+}
+.navbar-brand{
+    padding-right: 80px;
+}
+.navbar-brand img{
+    position: relative;
+    top: -40px;
+    padding-left: 45px;
+}
+.navbar-header{
+    width: 220px;
+}
+.panel-title{
+    color: #868585;
+}
