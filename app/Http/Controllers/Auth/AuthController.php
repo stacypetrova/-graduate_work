@@ -23,6 +23,13 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+
+    //    Вьюхи профилей
+    public function getRegisterStudent()
+    {
+        return view('auth.register_student');
+    }
+    
     /**
      * Create a new authentication controller instance.
      *

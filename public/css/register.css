@@ -1,59 +1,124 @@
-body{
+body {
     background: #cccccc;
     color: #868585;
     position: relative;
     overflow-x: hidden;
 }
-header{
+
+header {
     margin: 45px 0px 55px;
     font-family: 'PT Sans Narrow', sans-serif;
     font-weight: normal;
     text-align: center;
 }
-h1{
+
+h1 {
     font-size: 42px;
     font-family: 'Ubuntu Condensed', sans-serif;
 }
-label{
+
+label {
     font-size: 16px;
     font-family: 'Ubuntu Condensed', sans-serif;
     font-weight: normal;
 }
-/*Кнопка регистрации*/
 
+/*Кнопка регистрации*/
 
 /*Цветовая гамма блока авторизации*/
 .panel-default {
     border-color: #5585cf;
     color: #7f8082;
 }
+
 .panel-title {
-    color: white!important;
+    color: white !important;
 }
-.panel-default>.panel-heading {
+
+.panel-default > .panel-heading {
     background-color: #5585cf;
     border-color: #5585cf;
     color: white;
 }
 
-
-.menu{
+.menu {
     border: 0;
     padding: 0;
     margin: 0;
     height: 150px;
 }
-.navbar-brand{
+
+.navbar-brand {
     padding-right: 80px;
 }
-.navbar-brand img{
+
+.navbar-brand img {
     position: relative;
     top: -40px;
     padding-left: 45px;
 }
-.navbar-header{
+
+.navbar-header {
     width: 220px;
 }
-.panel-title{
+
+.panel-title {
     color: #868585;
 }
+
+/*Внешний вид radio*/
+.radio-inline {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.radio-user {
+    text-align: center;
+}
+
+/*Внешний вид селектпикеров*/
+.kurs {
+    width: 107%;
+}
+
+.group {
+    width: 107%;
+}
+
+/*Внешний вид формы для добавления аватара*/
+.kv-avatar .file-preview-frame, .kv-avatar .file-preview-frame:hover {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+}
+
+.kv-avatar .file-input {
+    display: table-cell;
+    max-width: 220px;
+    text-align: center;
+}
+
+.text-muted {
+    color: #777;
+    text-align: center;
+}
+
+.avatar_foto {
+    padding-left: 25px;
+}
+
+/*Внешний вид формы для добавления данных о преподавателе*/
+.control-label {
+    text-align: left;
+}
+
+.group-selecters {
+    height: 35px;
+}
+
+/*.teacher-form{*/
+/*width: 65%;*/
+/*}*/

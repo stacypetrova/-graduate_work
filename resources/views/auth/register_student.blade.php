@@ -15,6 +15,9 @@
     <!--Google шрифт-->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed|PT+Sans+Narrow" rel="stylesheet">
 
+    <!-- Bootstrap-select (плагин) -->
+    <link rel="stylesheet" href="/node_modules/bootstrap-select/dist/css/bootstrap-select.min.css">
+
     <!-- Bootstrap-FileInput (плагин) -->
     <link rel="stylesheet" href="/node_modules/bootstrap-fileinput/css/fileinput.min.css">
 
@@ -47,14 +50,14 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">
-                            Регистрация преподавателя</h3>
+                            Регистрация студента</h3>
                     </div>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                             {!! csrf_field() !!}
 
                             <div class="row">
-                                <!-------------------------------------------Добавление аватара------------------------------------------------------------------->
+                                <!-------------------------------------------Добавление аватара------------------------------------------------------------->
                                 <div class="col-md-3 avatar_foto">
                                     <div class="form-group">
                                         <div id="kv-avatar-errors-2" class="center-block"
@@ -67,7 +70,7 @@
 
 
                                 <div class="col-md-9">
-                                    {{----------------------------------------------------Ф.И.О. преподаватель----------------------------------------------}}
+                                    {{----------------------------------------------------Ф.И.О. студент----------------------------------------------}}
                                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                         <label class="col-md-3 control-label">Ф.И.О.:</label>
                                         <div class="col-md-9">
@@ -81,18 +84,48 @@
                                         </div>
                                     </div>
 
-
-                                    {{------------------------------------------------Должность преподавателя-------------------------------------------------------}}
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Должность:</label>
-                                        <div class="col-md-9">
-                                            <input type="work-post" placeholder="Старший преподаватель"
-                                                   class="form-control">
+                                    {{---------------------------------------------Курс + Группа (Студент)----------------------------------------------------}}
+                                    <div class="form-group group-selecters">
+                                        <div class="col-md-6">
+                                            <div class="form-group kurs">
+                                                <select class="selectpicker" title="Выберите курс" data-width="100%">
+                                                    <optgroup label="Бакалавриат">
+                                                        <option>1 курс</option>
+                                                        <option>2 курс</option>
+                                                        <option>3 курс</option>
+                                                        <option>4 курс</option>
+                                                    </optgroup>
+                                                    <optgroup label="Магистратура">
+                                                        <option>5 курс</option>
+                                                        <option>6 курс</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group group">
+                                                <select class="selectpicker" title="Выберите группу"
+                                                        data-live-search="true" data-width="100%">
+                                                    <optgroup>
+                                                        <option>ИТ-431</option>
+                                                        <option>ИТ-432</option>
+                                                        <option>ИТ-433</option>
+                                                        <option>ИТ-441</option>
+                                                        <option>ИТ-442</option>
+                                                        <option>ИТ-443</option>
+                                                        <option>ИТ-451</option>
+                                                        <option>ИТ-452</option>
+                                                        <option>ИТ-461</option>
+                                                        <option>ИТ-462</option>
+                                                        <option>ИТ-451м</option>
+                                                        <option>ИТ-461м</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
 
-
-                                    {{----------------------------------------------E-mail адрес преподаватель----------------------------------------------}}
+                                    {{----------------------------------------------E-mail адрес студента----------------------------------------------}}
                                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                         <label class="col-md-3 control-label">E-Mail адрес:</label>
                                         <div class="col-md-9">
@@ -102,7 +135,7 @@
                                     </div>
 
 
-                                    {{----------------------------------------------Пароль преподавателя-------------------------------------------------------}}
+                                    {{----------------------------------------------Пароль студента-------------------------------------------------------}}
                                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                         <label class="col-md-3 control-label">Пароль:</label>
 
@@ -133,6 +166,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <div class="col-md-6 col-md-offset-4">
                                         <button type="submit" class="btn btn-success">
@@ -156,6 +190,10 @@
 или добавьте другие файлы при необходимости -->
 <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
+<!--Плагин Bootstrap-select-->
+<script src="/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+<script src="/node_modules/bootstrap-select/dist/js/i18n/defaults-ru_RU.min.js"></script>
+
 <!--Плагин Bootstrap-FileInput-->
 <script src="/node_modules/bootstrap-fileinput/js/fileinput.min.js"></script>
 <script src="/node_modules/bootstrap-fileinput/themes/fa/theme.js"></script>
@@ -163,7 +201,7 @@
 
 <script>
 
-    //-----------------------------------------------Добавление аватара----------------------------------------------------------------
+    //------------------------------------Добавление аватара----------------------------------------------------------------
     var btnCust = '<button type="button" class="btn btn-default" title="Add picture tags" ' +
             'onclick="alert(\'Call your custom code here.\')">' +
             '<i class="glyphicon glyphicon-tag"></i>' +

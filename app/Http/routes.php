@@ -18,7 +18,11 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 // Registration routes...
 Route::get('auth/register', ['as' => 'auth_register', 'uses' => 'Auth\AuthController@getRegister']);
-Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::post('auth/register', ['as' => 'auth_register', 'uses' => 'Auth\AuthController@getRegister']);
+
+Route::get('auth/register_student', ['as' => 'student_register', 'uses' => 'Auth\AuthController@getRegisterStudent']);
+Route::post('auth/register_student', ['as' => 'student_register', 'uses' => 'Auth\AuthController@getRegisterStudent']);
+
 
 // Профиль студента и его пути
 Route::get('/', ['as' => 'profile_student', 'uses' => 'ProfileController@profileStudent']);
