@@ -15,11 +15,15 @@ class CreateNewfileTable extends Migration
         Schema::create('newfiles', function(Blueprint $table)
         {
             $table->bigIncrements('id');
-            $table->string('title_file');
+            $table->text('title_file');
             $table->text('kurs');
             $table->text('group');
             $table->text('subject');
-            $table->string('path_to_file')->unique();
+            $table->text('name_file');
+            $table->text('extension');
+            $table->text('weight');
+            $table->text('pseudonym');
+            $table->text('path_to_file');
             $table->text('description')->nullable();
             $table->timestamps();
         });

@@ -32,7 +32,11 @@ class NewFilesSeeder extends Seeder {
             'kurs' => '1 курс',
             'group' => 'ИТ-433',
             'subject' => 'Периферийные устройства',
-            'path_to_file' => 'path_to_file_1',
+            'name_file' => 'Имя файла 1',
+            'extension' => '.doc',
+            'weight' => '185 Кб',
+            'pseudonym' => 'Псевдоним 1',
+            'path_to_file' => '/путь_к_файлу_1',
             'description' => 'Описание 1'
         ]);
 
@@ -41,7 +45,11 @@ class NewFilesSeeder extends Seeder {
             'kurs' => '4 курс',
             'group' => 'ИТ-452',
             'subject' => 'Иностранный язык',
-            'path_to_file' => 'path_to_file_2',
+            'name_file' => 'Имя файла 2',
+            'extension' => '.pdf',
+            'weight' => '1 587 Кб',
+            'pseudonym' => 'Псевдоним 2',
+            'path_to_file' => '/путь_к_файлу_2',
             'description' => 'Описание 2'
         ]);
 
@@ -50,7 +58,11 @@ class NewFilesSeeder extends Seeder {
             'kurs' => '3 курс',
             'group' => 'ИТ-461м',
             'subject' => 'Технологии корпоративных сетей',
-            'path_to_file' => 'path_to_file_3',
+            'name_file' => 'Имя файла 3',
+            'extension' => '.xlsx',
+            'weight' => '16 Кб',
+            'pseudonym' => 'Псевдоним 3',
+            'path_to_file' => '/путь_к_файлу_3',
             'description' => 'Описание 3'
         ]);
     }

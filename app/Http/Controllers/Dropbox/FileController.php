@@ -19,7 +19,9 @@ class FileController extends Controller
 //    Список файлов для сутдента
     public function ListFileStudent()
     {
-        return view('file.list_file_student');
+        $newfiles = NewFile::all();
+//        dd($newfiles);
+        return view('file.list_file_student', ['newfiles' => $newfiles]);
     }
 
 //    Список файлов для преподавателя (с возможностью добавить новый файл, профиль преподавателя)
