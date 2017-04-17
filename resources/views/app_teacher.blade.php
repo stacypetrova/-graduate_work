@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 3 мета тега ДОЛЖНЫ идти ПЕРВЫМИ в head;
     любой другой head контент ДОЛЖЕН идти ПОСЛЕ этих тегов -->
-    <title>Список преподавателей</title>
+    <title>Файлообменник</title>
 
     <!-- Bootstrap -->
     <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
