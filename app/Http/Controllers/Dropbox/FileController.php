@@ -25,10 +25,9 @@ class FileController extends Controller
     }
 
 //    Скачиваем файл
-    public function DownloadFile()
+    public function DownloadFile($alias)
     {
-
-        $file = NewFile::where("pseudonym", "=", 'pseudonym_3')->first();
+        $file = NewFile::where("pseudonym", "=", $alias)->first();
     // dd($file->path_to_file, $file->pseudonym, $file->extension);
         $path_to_file = $file->path_to_file;
         $pseudonym = $file->pseudonym;

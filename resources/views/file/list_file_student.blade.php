@@ -52,7 +52,7 @@
                                 <td>{{ $newfile->title_file }}</td>
                                 <td>{{ $newfile->created_at }}</td>
                                 <td>{{ $newfile->extension }}</td>
-                                <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
+                                <td><a href="{{ route('download_file', ['alias' => $newfile->pseudonym]) }}"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
                         </tr>
                         @endforeach
                         </tbody>
