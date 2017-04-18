@@ -28,6 +28,9 @@ Route::post('auth/register_student', ['as' => 'student_register', 'uses' => 'Aut
 Route::get('/', ['as' => 'profile_student', 'uses' => 'ProfileController@profileStudent']);
 Route::get('dropbox/student', ['as' => 'dropbox_student', 'uses' => 'Dropbox\FileController@ListFileStudent']);
 
+// Скачиваем файл
+Route::get('download/{alias}', ['as' => 'download_file', 'uses' => 'Dropbox\FileController@DownloadFile']);
+
 // Профиль преподавателя и его пути (с возможностью добавления новых файлоы, профиль преподавателя)
 Route::get('/teacher', ['as' => 'profile_teacher', 'uses' => 'ProfileController@profileTeacher']);
 Route::get('dropbox/teacher', ['as' => 'dropbox_teacher', 'uses' => 'Dropbox\FileController@ListFileTeacher']);

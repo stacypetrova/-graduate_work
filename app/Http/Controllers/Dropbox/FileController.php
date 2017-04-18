@@ -24,6 +24,20 @@ class FileController extends Controller
         return view('file.list_file_student', ['newfiles' => $newfiles]);
     }
 
+//    Скачиваем файл
+    public function DownloadFile()
+    {
+
+        $file = NewFile::where("pseudonym", "=", 'pseudonym_3')->first();
+    // dd($file->path_to_file, $file->pseudonym, $file->extension);
+        $path_to_file = $file->path_to_file;
+        $pseudonym = $file->pseudonym;
+        $extension = $file->extension;
+        $path_to_download = $path_to_file . "\\" . $pseudonym . $extension;
+    // dd($path_to_download);
+        return response()->download(storage_path($path_to_download));
+    }
+
 //    Список файлов для преподавателя (с возможностью добавить новый файл, профиль преподавателя)
     public function ListFileTeacher()
     {

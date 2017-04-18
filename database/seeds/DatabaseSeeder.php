@@ -36,7 +36,7 @@ class NewFilesSeeder extends Seeder {
             'extension' => '.doc',
             'weight' => '185 Кб',
             'pseudonym' => 'Псевдоним 1',
-            'path_to_file' => '/путь_к_файлу_1',
+            'path_to_file' => 'путь_к_файлу_1',
             'description' => 'Описание 1'
         ]);
 
@@ -49,7 +49,7 @@ class NewFilesSeeder extends Seeder {
             'extension' => '.pdf',
             'weight' => '1 587 Кб',
             'pseudonym' => 'Псевдоним 2',
-            'path_to_file' => '/путь_к_файлу_2',
+            'path_to_file' => 'путь_к_файлу_2',
             'description' => 'Описание 2'
         ]);
 
@@ -61,8 +61,8 @@ class NewFilesSeeder extends Seeder {
             'name_file' => 'Имя файла 3',
             'extension' => '.xlsx',
             'weight' => '16 Кб',
-            'pseudonym' => 'Псевдоним 3',
-            'path_to_file' => '/путь_к_файлу_3',
+            'pseudonym' => 'pseudonym_3',
+            'path_to_file' => 'path_to_file_3',
             'description' => 'Описание 3'
         ]);
     }
