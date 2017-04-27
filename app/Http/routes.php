@@ -31,6 +31,9 @@ Route::get('dropbox/student', ['as' => 'dropbox_student', 'uses' => 'Dropbox\Fil
 // Скачиваем файл
 Route::get('download/{alias}', ['as' => 'download_file', 'uses' => 'Dropbox\FileController@DownloadFile']);
 
+// Удаляем файл из таблицы
+Route::get('delete/{id}', ['as' => 'delete_file', 'uses' => 'Dropbox\FileController@destroy']) ;
+
 // Профиль преподавателя и его пути (с возможностью добавления новых файлов, профиль преподавателя)
 Route::get('/teacher', ['as' => 'profile_teacher', 'uses' => 'ProfileController@profileTeacher']);
 Route::get('dropbox/teacher', ['as' => 'dropbox_teacher', 'uses' => 'Dropbox\FileController@ListFileTeacher']);

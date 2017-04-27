@@ -44,7 +44,7 @@
                             <th data-field="date">Добавлено</th>
                             <th data-field="expansion" data-sortable="true">Расширение</th>
                             <th data-field="download" data-align="center">Скачать</th>
-
+                            <th data-field="remove" data-align="center">Удалить</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -54,6 +54,7 @@
                                 <td>{{ $newfile->created_at }}</td>
                                 <td>{{ $newfile->extension }}</td>
                                 <td><a href="{{ route('download_file', ['alias' => $newfile->pseudonym]) }}"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
+                            <td><a href="{{ route('delete_file', ['id' => $newfile->id]) }}"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
                         </tr>
                         @endforeach
                         </tbody>

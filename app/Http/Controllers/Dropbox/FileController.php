@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Dropbox;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\NewFile;
-use Illuminate\Support\Str;
+
 
 class FileController extends Controller
 {
@@ -25,18 +25,6 @@ class FileController extends Controller
         return view('file.list_file_student', ['newfiles' => $newfiles]);
     }
 
-//    Скачиваем файл
-    public function DownloadFile($alias)
-    {
-        $file = NewFile::where("pseudonym", "=", $alias)->first();
-    // dd($file->path_to_file, $file->pseudonym, $file->extension);
-        $path_to_file = $file->path_to_file;
-        $pseudonym = $file->pseudonym;
-        $extension = $file->extension;
-        $path_to_download = $path_to_file . "\\" . $pseudonym . "." . $extension;
-//     dd($path_to_download);
-        return response()->download($path_to_download);
-    }
 
 //    Список файлов для преподавателя (с возможностью добавить новый файл, профиль преподавателя)
     public function ListFileTeacher()
@@ -61,11 +49,6 @@ class FileController extends Controller
         return view('file.add_file');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     //  Добавление нового файла преподавателем
     public function create(Request $request)
     {
@@ -78,8 +61,9 @@ class FileController extends Controller
         $addfile->subject = $request['subject'];
         $addfile->description = $request['description'];
 
-        $file = $request->file('input_file') ;
-        $addfile->weight = $file->getSize()/1024;
+        $file = $request->file('input_file');
+        $weight = $file->getSize()/1024;
+        $addfile->weight = round($weight, 0) . " " . "Кб";
         $addfile->name_file= $file->getClientOriginalName();
 //        $pseudonym = $file->getClientOriginalName().'_'.time(date_create(null));
         $pseudonym = Str::random(12).'_'.time(date_create(null));
@@ -94,6 +78,19 @@ class FileController extends Controller
 //        dd('Сохранено');
 //        dd($request);
         return redirect()->route('dropbox_student');
+    }
+
+    //    Скачиваем файл
+    public function DownloadFile($alias)
+    {
+        $file = NewFile::where("pseudonym", "=", $alias)->first();
+        // dd($file->path_to_file, $file->pseudonym, $file->extension);
+        $path_to_file = $file->path_to_file;
+        $pseudonym = $file->pseudonym;
+        $extension = $file->extension;
+        $path_to_download = $path_to_file . "\\" . $pseudonym . "." . $extension;
+    //  dd($path_to_download);
+        return response()->download($path_to_download);
     }
 
     /**
@@ -147,8 +144,10 @@ class FileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //  Удаление файла из таблицы с файлами
     public function destroy($id)
     {
-        //
+        DB::delete('delete from newfiles where id = ?', [$id]);
+        return redirect()->route('dropbox_student');
     }
 }
