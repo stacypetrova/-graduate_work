@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\NewFile;
+use Illuminate\Support\Str;
 
 class FileController extends Controller
 {
@@ -32,9 +33,9 @@ class FileController extends Controller
         $path_to_file = $file->path_to_file;
         $pseudonym = $file->pseudonym;
         $extension = $file->extension;
-        $path_to_download = $path_to_file . "\\" . $pseudonym . $extension;
-    // dd($path_to_download);
-        return response()->download(storage_path($path_to_download));
+        $path_to_download = $path_to_file . "\\" . $pseudonym . "." . $extension;
+//     dd($path_to_download);
+        return response()->download($path_to_download);
     }
 
 //    Список файлов для преподавателя (с возможностью добавить новый файл, профиль преподавателя)
@@ -55,15 +56,9 @@ class FileController extends Controller
         return view('file.review_file');
     }
 
-//    Добавление нового файла преподавателем
-    public function AddNewFile()
-    {
-        return view('file.add_file');
-    }
-
     public function index()
     {
-        //
+        return view('file.add_file');
     }
 
     /**
@@ -71,9 +66,34 @@ class FileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    //  Добавление нового файла преподавателем
+    public function create(Request $request)
     {
-        //
+        // Валидация
+        $addfile = new NewFile();
+        $addfile->title_file = $request['title_file'];
+        $addfile->kurs = $request['kurs'];
+        $addfile->group = $request['group'];
+        $addfile->subject = $request['subject'];
+        $addfile->subject = $request['subject'];
+        $addfile->description = $request['description'];
+
+        $file = $request->file('input_file') ;
+        $addfile->weight = $file->getSize()/1024;
+        $addfile->name_file= $file->getClientOriginalName();
+//        $pseudonym = $file->getClientOriginalName().'_'.time(date_create(null));
+        $pseudonym = Str::random(12).'_'.time(date_create(null));
+        $addfile->pseudonym= $pseudonym;
+        $extension = $file->getClientOriginalExtension();
+        $addfile->extension = $extension;
+        $destinationPath = storage_path('files');
+        $addfile->path_to_file = $destinationPath;
+//        dd($destinationPath);
+        $file->move($destinationPath, $pseudonym . "." . $extension);
+        $addfile->save();
+//        dd('Сохранено');
+//        dd($request);
+        return redirect()->route('dropbox_student');
     }
 
     /**

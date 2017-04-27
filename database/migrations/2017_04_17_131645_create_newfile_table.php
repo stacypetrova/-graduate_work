@@ -18,7 +18,7 @@ class CreateNewfileTable extends Migration
             $table->text('title_file');
             $table->text('kurs');
             $table->text('group');
-            $table->text('subject');
+            $table->text('subject'); 
             $table->text('name_file');
             $table->text('extension');
             $table->text('weight');

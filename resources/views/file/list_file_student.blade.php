@@ -44,6 +44,7 @@
                             <th data-field="date">Добавлено</th>
                             <th data-field="expansion" data-sortable="true">Расширение</th>
                             <th data-field="download" data-align="center">Скачать</th>
+
                         </tr>
                         </thead>
                         <tbody>

@@ -19,15 +19,16 @@
 <div class="contant">
     <h1 class="text-center">Добавление файла</h1>
     <div class="container">
-        <form role="form" class="form">
+        <form action="{{route('file.create')}}" method="post" role="form" enctype="multipart/form-data">
+            {!! csrf_field() !!}
             <div class="form-group">
-                <label for="name_file">Наименование файла:</label>
-                <input type="name_file" class="form-control" id="name_file" placeholder="Введите название файла">
+                <label for="title_file">Наименование файла:</label>
+                <input name="title_file" type="title_file" class="form-control" id="title_file" placeholder="Введите название файла">
             </div>
             <div class="row">
                 <div class="col-md-3 kurs">
                     <div class="form-group">
-                        <select class="selectpicker" title="Выберите курс" data-width="100%">
+                        <select name="kurs" class="selectpicker" title="Выберите курс" data-width="100%">
                             <optgroup label="Бакалавриат">
                                 <option>1 курс</option>
                                 <option>2 курс</option>
@@ -43,7 +44,7 @@
                 </div>
                 <div class="col-md-3 group">
                     <div class="form-group">
-                        <select class="selectpicker" title="Выберите группу" data-live-search="true" data-width="100%">
+                        <select name="group" class="selectpicker" title="Выберите группу" data-live-search="true" data-width="100%">
                             <optgroup>
                                 <option>ИТ-431</option>
                                 <option>ИТ-432</option>
@@ -63,7 +64,7 @@
                 </div>
                 <div class="col-md-6 subject">
                     <div class="form-group">
-                        <select class="selectpicker" title="Выберите предмет" data-live-search="true" data-width="100%">
+                        <select name="subject" class="selectpicker" title="Выберите предмет" data-live-search="true" data-width="100%">
                             <optgroup>
                                 <option>Периферийные устройства</option>
                                 <option>Теория кодирования дискретной информации</option>
@@ -82,12 +83,12 @@
             <!--Добавление файла-->
             <div class="form-group chooseFile">
                 <label class="control-label">Выберите файл:</label>
-                <input id="input-file" name="input" type="file" multiple class="file-loading">
+                <input id="input-file" name="input_file" type="file" multiple class="file-loading">
             </div>
 
             <div class="form-group">
                 <label for="description">Описание:</label>
-                <textarea class="form-control" rows="3" id="description"></textarea>
+                <textarea name="description" class="form-control" rows="3" id="description"></textarea>
             </div>
 
             <!--Сохранение файла-->

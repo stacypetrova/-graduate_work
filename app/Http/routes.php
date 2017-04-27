@@ -31,12 +31,13 @@ Route::get('dropbox/student', ['as' => 'dropbox_student', 'uses' => 'Dropbox\Fil
 // Скачиваем файл
 Route::get('download/{alias}', ['as' => 'download_file', 'uses' => 'Dropbox\FileController@DownloadFile']);
 
-// Профиль преподавателя и его пути (с возможностью добавления новых файлоы, профиль преподавателя)
+// Профиль преподавателя и его пути (с возможностью добавления новых файлов, профиль преподавателя)
 Route::get('/teacher', ['as' => 'profile_teacher', 'uses' => 'ProfileController@profileTeacher']);
 Route::get('dropbox/teacher', ['as' => 'dropbox_teacher', 'uses' => 'Dropbox\FileController@ListFileTeacher']);
 
 // Форма для добавления нового файла преподавателем
-Route::get('/new_file', ['as' => 'add_file', 'uses' => 'Dropbox\FileController@AddNewFile']);
+Route::get('add_file', ['as' => 'file.create', 'uses' => 'Dropbox\FileController@index']);
+Route::post('add_file', ['as' => 'file.create', 'uses' => 'Dropbox\FileController@create']);
 
 // Просмотр файла подробнее
 Route::get('dropbox/review_file', ['as' => 'review_file', 'uses' => 'Dropbox\FileController@ReviewFile']);
