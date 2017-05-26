@@ -1,4 +1,8 @@
-@extends('app')
+@extends('layouts.app')
+
+@section('title')
+    Предметы на кафедре
+@stop
 
 @section('content')
     <!--Последние CSS-->

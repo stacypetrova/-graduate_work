@@ -1,4 +1,8 @@
-@extends('app')
+@extends('layouts.app')
+
+@section('title')
+    Просмотр информации о файле
+@stop
 
 @section('content')
     <!--Последние CSS-->
@@ -50,7 +54,7 @@
                             </tr>
                         </table>
                         <div class="btn_nazad">
-                            <a class="btn btn-primary" href="{{route('dropbox_student')}}" role="button">Назад</a>
+                            <a class="btn btn-primary" href="{{route('dropbox', ['type' => Auth::user()->user_type])}}" role="button">Назад</a>
                             <button type="button" class="btn btn-success download"><span
                                         class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span>Скачать
                             </button>

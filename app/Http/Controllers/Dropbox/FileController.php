@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\NewFile;
+use Illuminate\Support\Str;
 
 
 class FileController extends Controller
@@ -18,19 +19,16 @@ class FileController extends Controller
      */
     
 //    Список файлов для сутдента
-    public function ListFileStudent()
+//    Список файлов для преподавателя (с возможностью добавить новый файл, профиль преподавателя)
+
+    public function ListFile()
     {
         $newfiles = NewFile::all();
-//        dd($newfiles);
-        return view('file.list_file_student', ['newfiles' => $newfiles]);
+
+        return view('file.list_file', ['newfiles' => $newfiles]);
     }
 
-
-//    Список файлов для преподавателя (с возможностью добавить новый файл, профиль преподавателя)
-    public function ListFileTeacher()
-    {
-        return view('file.list_file_teacher');
-    }
+    
 
 //    Список файлов преподавателя (без возможности добавить новый файл, профиль студента)
     public function ReviewListFileTeacher()
@@ -53,6 +51,7 @@ class FileController extends Controller
     public function create(Request $request)
     {
         // Валидация
+        
         $addfile = new NewFile();
         $addfile->title_file = $request['title_file'];
         $addfile->kurs = $request['kurs'];

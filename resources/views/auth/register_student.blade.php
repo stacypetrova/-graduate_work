@@ -53,11 +53,13 @@
                             Регистрация студента</h3>
                     </div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ route('auth_student_register') }}"
+                              enctype="multipart/form-data">
                             {!! csrf_field() !!}
 
                             <div class="row">
-                                <!-------------------------------------------Добавление аватара------------------------------------------------------------->
+                                <input type="hidden" name="user_type" value="student">
+<!-------------------------------------------Добавление аватара------------------------------------------------------------->
                                 <div class="col-md-3 avatar_foto">
                                     <div class="form-group">
                                         <div id="kv-avatar-errors-2" class="center-block"
@@ -70,9 +72,9 @@
 
 
                                 <div class="col-md-9">
-                                    {{----------------------------------------------------Ф.И.О. студент----------------------------------------------}}
+ {{----------------------------------------------------Ф.И.О. студент----------------------------------------------}}
                                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                        <label class="col-md-3 control-label">Ф.И.О.:</label>
+                                        <label for="name" class="col-md-3 control-label">Ф.И.О.:</label>
                                         <div class="col-md-9">
                                             <input type="text" placeholder="Иванов Иван Иванович"
                                                    class="col-md-10 form-control" name="name" value="{{ old('name') }}">
@@ -84,50 +86,37 @@
                                         </div>
                                     </div>
 
-                                    {{---------------------------------------------Курс + Группа (Студент)----------------------------------------------------}}
+{{---------------------------------------------Курс + Группа (Студент)----------------------------------------------------}}
                                     <div class="form-group group-selecters">
                                         <div class="col-md-6">
                                             <div class="form-group kurs">
-                                                <select class="selectpicker" title="Выберите курс" data-width="100%">
-                                                    <optgroup label="Бакалавриат">
-                                                        <option>1 курс</option>
-                                                        <option>2 курс</option>
-                                                        <option>3 курс</option>
-                                                        <option>4 курс</option>
-                                                    </optgroup>
-                                                    <optgroup label="Магистратура">
-                                                        <option>5 курс</option>
-                                                        <option>6 курс</option>
-                                                    </optgroup>
+                                                <select name="kurs" class="selectpicker" title="Выберите курс" data-width="100%">
+                                                    @foreach($kurs->toArray() as $key=>$value)
+                                                        <optgroup label="{{$key}}">
+                                                            @foreach($value as $sub_key=>$sub_value)
+                                                                <option value="{{$sub_value['id']}}">{{$sub_value['name']}}</option>
+                                                            @endforeach
+                                                        </optgroup>
+                                                    @endforeach
+
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group group">
-                                                <select class="selectpicker" title="Выберите группу"
+                                                <select name="group" class="selectpicker" title="Выберите группу"
                                                         data-live-search="true" data-width="100%">
-                                                    <optgroup>
-                                                        <option>ИТ-431</option>
-                                                        <option>ИТ-432</option>
-                                                        <option>ИТ-433</option>
-                                                        <option>ИТ-441</option>
-                                                        <option>ИТ-442</option>
-                                                        <option>ИТ-443</option>
-                                                        <option>ИТ-451</option>
-                                                        <option>ИТ-452</option>
-                                                        <option>ИТ-461</option>
-                                                        <option>ИТ-462</option>
-                                                        <option>ИТ-451м</option>
-                                                        <option>ИТ-461м</option>
-                                                    </optgroup>
+                                                    @foreach($group->toArray() as $key=>$value)
+                                                        <option value="{{$value['id']}}">{{$value['name']}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
 
-                                    {{----------------------------------------------E-mail адрес студента----------------------------------------------}}
+{{----------------------------------------------E-mail адрес студента----------------------------------------------}}
                                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                        <label class="col-md-3 control-label">E-Mail адрес:</label>
+                                        <label for="email" class="col-md-3 control-label">E-Mail адрес:</label>
                                         <div class="col-md-9">
                                             <input type="email" placeholder="email@email.email" class="form-control"
                                                    name="email" value="{{ old('email') }}">
@@ -135,9 +124,9 @@
                                     </div>
 
 
-                                    {{----------------------------------------------Пароль студента-------------------------------------------------------}}
+{{----------------------------------------------Пароль студента-------------------------------------------------------}}
                                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                        <label class="col-md-3 control-label">Пароль:</label>
+                                        <label for="password" class="col-md-3 control-label">Пароль:</label>
 
                                         <div class="col-md-7">
                                             <input type="password" placeholder="Ваш пароль" class="form-control"

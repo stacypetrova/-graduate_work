@@ -1,4 +1,8 @@
-@extends('app')
+@extends('layouts.app')
+
+@section('title')
+    Профиль студента
+@stop
 
 @section('content')
     <link rel="stylesheet" type="text/css" href="/css/style_content.css">
@@ -11,100 +15,45 @@
                         <div class="panel-body">
                             <div class="profile">
                                 <div class="profile_logo">
-                                    <img src="/images/profile.png" alt="Фотография моего профиля" class="img-circle img-responsive center-block">
+                                    <img src="{{'/avatars/'.Auth::user()->pseudonym.'.'.Auth::user()->extension}}" alt="Фотография моего профиля" class="img-circle img-responsive center-block">
                                 </div>
-                                <h3>Петрова Анастасия Артуровна</h3>
-                                <p><strong>Курс: </strong> 4 курс</p>
-                                <p><strong>Группа: </strong> ИТ-431</p>
-                                <p><strong>Количество предметов на кафедре: </strong> 7</p>
+                                <h3>{{Auth::user()->name}}</h3>
+                                @if(Auth::user()->user_type == 'student')
+                                    <p><strong>Курс: </strong>{{Auth::user()->group->kurs->name}}</p>
+                                    <p><strong>Группа: </strong>{{Auth::user()->group->name}}</p>
+                                    <p><strong>Количество предметов на кафедре: </strong> 7</p>
+                                @else
+                                    <p><strong>Должность: </strong>{{Auth::user()->teacher->post}}</p>
+                                    <p><strong>Количество предметов: </strong> 7</p>
+                                @endif
+
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <h3>Мои предметы</h3>
-                    <div class="row">
-                        <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_student')}}">
-                                <button type="button" class="btn btn-primary btn_list">
-                                    <p>Программирование интернет приложений</p></button>
-                            </a>
+                    @if(Auth::user()->user_type == 'student')
+                        <h3>Все предметы</h3>
+                        <div class="row">
+                            @foreach($user->group->teachers as $teacher)
+                                @foreach($teacher->subjects as $subject)
+                                    <div class="col-md-3 subject_box">
+                                        <a href="{{route('dropbox', ['type' => Auth::user()->user_type])}}">
+                                            <button type="button" class="btn btn-primary btn_list">
+                                                <p>{{$subject->name}}</p></button>
+                                        </a>
+                                    </div>
+                                @endforeach
+                            @endforeach
                         </div>
+                    @else
 
-                        <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_student')}}">
-                                <button type="button" class="btn btn-primary btn_list">
-                                    <p>Программирование интернет приложений</p></button>
-                            </a>
-                        </div>
-                        <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_student')}}">
-                                <button type="button" class="btn btn-primary btn_list">
-                                    <p>Программирование интернет приложений</p></button>
-                            </a>
-                        </div>
-                        <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_student')}}">
-                                <button type="button" class="btn btn-primary btn_list">
-                                    <p>Программирование интернет приложений</p></button>
-                            </a>
-                        </div>
-                    </div>
+                        <h3>Предметы</h3>
+                        <div class="row">
 
-                    <div class="row">
-                        <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_student')}}">
-                                <button type="button" class="btn btn-primary btn_list">
-                                    <p>Программирование интернет приложений</p></button>
-                            </a>
                         </div>
+                    @endif
 
-                        <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_student')}}">
-                                <button type="button" class="btn btn-primary btn_list">
-                                    <p>Программирование интернет приложений</p></button>
-                            </a>
-                        </div>
-                        <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_student')}}">
-                                <button type="button" class="btn btn-primary btn_list">
-                                    <p>Программирование интернет приложений</p></button>
-                            </a>
-                        </div>
-                        <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_student')}}">
-                                <button type="button" class="btn btn-primary btn_list">
-                                    <p>Программирование интернет приложений</p></button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_student')}}">
-                                <button type="button" class="btn btn-primary btn_list">
-                                    <p>Программирование интернет приложений</p></button>
-                            </a>
-                        </div>
-
-                        <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_student')}}">
-                                <button type="button" class="btn btn-primary btn_list">
-                                    <p>Программирование интернет приложений</p></button>
-                            </a>
-                        </div>
-                        <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_student')}}">
-                                <button type="button" class="btn btn-primary btn_list">
-                                    <p>Программирование интернет приложений</p></button>
-                            </a>
-                        </div>
-                        <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_student')}}">
-                                <button type="button" class="btn btn-primary btn_list">
-                                    <p>Программирование интернет приложений</p></button>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

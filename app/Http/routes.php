@@ -12,48 +12,68 @@
 */
 
 // Аутентификация пользователя
-Route::get('auth/login', ['as' => 'auth_login', 'uses' => 'Auth\AuthController@getLogin']);
+Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
-// Registration routes...
-Route::get('auth/register', ['as' => 'auth_register', 'uses' => 'Auth\AuthController@getRegister']);
-Route::post('auth/register', ['as' => 'auth_register', 'uses' => 'Auth\AuthController@getRegister']);
+// Регистрация преподавателя/студента
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::get('auth/register_student', ['as' => 'auth_student_register', 'uses' => 'UserController@getRegisterStudent']);
+Route::post('auth/register_student', ['as' => 'auth_student_register', 'uses' => 'Auth\AuthController@postRegister']);
 
-Route::get('auth/register_student', ['as' => 'student_register', 'uses' => 'Auth\AuthController@getRegisterStudent']);
-Route::post('auth/register_student', ['as' => 'student_register', 'uses' => 'Auth\AuthController@getRegisterStudent']);
+Route::group(['middleware' => 'auth'], function(){
+    // Профиль студента и его пути
+    Route::get('/', ['as' => 'profile', 'uses' => 'ProfileController@profile']);
+
+    Route::get('dropbox/{type}', ['as' => 'dropbox', 'uses' => 'Dropbox\FileController@ListFile']);
+    
+    // Скачиваем файл
+    Route::get('download/{alias}', ['as' => 'download_file', 'uses' => 'Dropbox\FileController@DownloadFile']);
+
+    // Удаляем файл из таблицы
+    Route::get('delete/{id}', ['as' => 'delete_file', 'uses' => 'Dropbox\FileController@destroy']) ;
+
+    // Профиль преподавателя и его пути (с возможностью добавления новых файлов, профиль преподавателя)
+
+    // Форма для добавления нового файла преподавателем
+    Route::get('add_file', ['as' => 'file.create', 'uses' => 'Dropbox\FileController@index']);
+    Route::post('add_file', ['as' => 'file.create', 'uses' => 'Dropbox\FileController@create']);
+
+    // Просмотр файла подробнее
+    Route::get('dropbox/review_file', ['as' => 'review_file', 'uses' => 'Dropbox\FileController@ReviewFile']);
+
+    // Просмотр списка преподавателей на кафедре
+    Route::get('/list_teachers', ['as' => 'list_teachers', 'uses' => 'ListTeacherController@ListTeacher']);
+
+    // Просмотр всей скинутых фалов преподавателя (без возможность добавления новых, профиль студента)
+    Route::get('/list_teacher_file', ['as' => 'list_teacher_files', 'uses' =>
+        'Dropbox\FileController@ReviewListFileTeacher']);
+
+    // Просмотр списка предметов на кафедре
+    Route::get('/list_subjects', ['as' => 'list_subjects', 'uses' => 'KafedraSubjectsController@ListSubjectsKafedra']);
+
+    // Просмотр преподавателей по предмету
+    Route::get('/subject_more', ['as' => 'subjects_more', 'uses' => 'KafedraSubjectsController@KafedraSubjectsMore']);
 
 
-// Профиль студента и его пути
-Route::get('/', ['as' => 'profile_student', 'uses' => 'ProfileController@profileStudent']);
-Route::get('dropbox/student', ['as' => 'dropbox_student', 'uses' => 'Dropbox\FileController@ListFileStudent']);
+    Route::group(['prefix' => 'admin'], function(){
+        Route::get('/', ['as' => 'admin.teachers', 'uses' => 'Admin\AdminController@getRegisterTeacher']);
+        Route::post('/teacher', ['as' => 'admin.create_teacher', 'uses' => 'Admin\AdminController@postRegisterTeacher']);
 
-// Скачиваем файл
-Route::get('download/{alias}', ['as' => 'download_file', 'uses' => 'Dropbox\FileController@DownloadFile']);
+        Route::get('/subjects', ['as' => 'admin.subjects', 'uses' => 'Admin\AdminController@getRegisterSubject']);
+        Route::post('/subject', ['as' => 'admin.create_subject', 'uses' =>
+            'Admin\AdminController@postRegisterSubject']);
 
-// Удаляем файл из таблицы
-Route::get('delete/{id}', ['as' => 'delete_file', 'uses' => 'Dropbox\FileController@destroy']) ;
+        Route::get('/group', ['as' => 'admin.group', 'uses' => 'Admin\AdminController@getRegisterGroup']);
+        Route::post('/group', ['as' => 'admin.create_group', 'uses' =>
+            'Admin\AdminController@postRegisterGroup']);
 
-// Профиль преподавателя и его пути (с возможностью добавления новых файлов, профиль преподавателя)
-Route::get('/teacher', ['as' => 'profile_teacher', 'uses' => 'ProfileController@profileTeacher']);
-Route::get('dropbox/teacher', ['as' => 'dropbox_teacher', 'uses' => 'Dropbox\FileController@ListFileTeacher']);
-
-// Форма для добавления нового файла преподавателем
-Route::get('add_file', ['as' => 'file.create', 'uses' => 'Dropbox\FileController@index']);
-Route::post('add_file', ['as' => 'file.create', 'uses' => 'Dropbox\FileController@create']);
-
-// Просмотр файла подробнее
-Route::get('dropbox/review_file', ['as' => 'review_file', 'uses' => 'Dropbox\FileController@ReviewFile']);
-
-// Просмотр списка преподавателей на кафедре
-Route::get('/list_teachers', ['as' => 'list_teachers', 'uses' => 'ListTeacherController@ListTeacher']);
-
-// Просмотр всей скинутых фалов преподавателя (без возможность добавления новых, профиль студента)
-Route::get('/list_teacher_file', ['as' => 'list_teacher_files', 'uses' =>
-    'Dropbox\FileController@ReviewListFileTeacher']);
-
-// Просмотр списка предметов на кафедре
-Route::get('/list_subjects', ['as' => 'list_subjects', 'uses' => 'KafedraSubjectsController@ListSubjectsKafedra']);
-
-// Просмотр преподавателей по предмету
-Route::get('/subject_more', ['as' => 'subjects_more', 'uses' => 'KafedraSubjectsController@KafedraSubjectsMore']);
+        Route::get('/sync_teacher_and_subject/{id}', ['as' => 'admin.sync_teacher', 'uses' =>
+            'Admin\AdminController@syncTeacherAndSubject']);
+        Route::post('/sync_teacher_and_subject/{id}', ['as' => 'admin.create_sync_teacher_and_subjects',
+            'uses' => 'Admin\AdminController@createSyncTeacherAndSubject']);
+        Route::post('/sync_teacher_and_groups/{id}', ['as' => 'admin.create_sync_teacher_and_groups',
+            'uses' => 'Admin\AdminController@createSyncTeacherAndGroup']);
+    });
+});

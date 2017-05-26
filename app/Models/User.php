@@ -28,7 +28,21 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = [
+        'user_type',
+        'name_file',
+        'extension',
+        'weight',
+        'pseudonym',
+        'path_to_file',
+        'name',
+        'teacher_id',
+        'kurs_id',
+        'group_id',
+        'group',
+        'email',
+        'password',
+    ];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -36,4 +50,14 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public function group()
+    {
+        return $this->belongsTo('App\Models\Group');
+    }
+
+    public function teacher()
+    {
+        return $this->belongsTo('App\Models\Teacher');
+    }
 }

@@ -1,4 +1,8 @@
-@extends('app_teacher')
+@extends('layouts.app_teacher')
+
+@section('title')
+    Добавление файла
+@stop
 
 @section('content')
 

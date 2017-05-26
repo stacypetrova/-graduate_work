@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -16,15 +18,13 @@ class ProfileController extends Controller
      */
 
 //    Вьюхи профилей
-    public function profileStudent()
+    public function profile()
     {
-        return view('profile.index');
+        $user = User::with(['group','group.teachers','group.teachers.subjects'])->find(Auth::user()->id);
+
+        return view('profile.index', ['user'=>$user]);
     }
 
-    public function profileTeacher()
-    {
-        return view('profile.index_teacher');
-    }
 
     
 //    public function show_list()

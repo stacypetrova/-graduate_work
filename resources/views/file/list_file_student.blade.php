@@ -1,4 +1,8 @@
-@extends('app')
+@extends('layouts.app')
+
+@section('title')
+    Список файлов
+@stop
 
 @section('content')
     <!-- Bootstrap-table (плагин) -->

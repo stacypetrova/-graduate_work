@@ -98,7 +98,7 @@
                                 <div class="form-group">
                                     <div class="col-md-6 col-md-offset-4 auth_buttons">
                                             <button type="submit" class="btn btn-success enter">Войти</button>
-                                            <a class="btn btn-primary" href="{{route('auth_register')}}">Регистрация</a>
+                                            <a class="btn btn-primary" href="{{route('auth_student_register')}}">Регистрация</a>
                                     </div>
                                 </div>
                             </form>

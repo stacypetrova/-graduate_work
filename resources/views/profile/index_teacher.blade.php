@@ -1,4 +1,8 @@
-@extends('app_teacher')
+@extends('layouts.app_teacher')
+
+@section('title')
+    Профиль преподавателя
+@stop
 
 @section('content')
     <link rel="stylesheet" type="text/css" href="/css/style_content_teacher.css">
@@ -24,26 +28,26 @@
                     <h3>Предметы</h3>
                     <div class="row">
                         <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_teacher')}}">
+                            <a href="{{route('dropbox', ['type' => Auth::user()->user_type])}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
                         </div>
 
                         <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_teacher')}}">
+                            <a href="{{route('dropbox', ['type' => Auth::user()->user_type])}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
                         </div>
                         <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_teacher')}}">
+                            <a href="{{route('dropbox', ['type' => Auth::user()->user_type])}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>
                         </div>
                         <div class="col-md-3 subject_box">
-                            <a href="{{route('dropbox_teacher')}}">
+                            <a href="{{route('dropbox', ['type' => Auth::user()->user_type])}}">
                                 <button type="button" class="btn btn-primary btn_list">
                                     <p>Программирование интернет приложений</p></button>
                             </a>

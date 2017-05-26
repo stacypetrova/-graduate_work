@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 3 мета тега ДОЛЖНЫ идти ПЕРВЫМИ в head;
     любой другой head контент ДОЛЖЕН идти ПОСЛЕ этих тегов -->
-    <title>Файлообменник</title>
+    <title>@yield('title')</title>
 
     <!-- Bootstrap -->
     <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,13 +18,14 @@
     <link rel="stylesheet" href="/node_modules/jasny-bootstrap/css/jasny-bootstrap.min.css">
 
     <!-- Последние CSS -->
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style_teacher.css">
 
     <!-- HTML5 и Respond.js для поддержки IE8 элементов HTML5 и медиа-запросов -->
     <!-- ПРЕДУПРЕЖДЕНИЕ: Respond.js не работает, если вы просматриваете страницу с помощью file:// -->
     <script src="/js/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 </head>
+
 <body>
 
 <header>
@@ -32,14 +33,13 @@
         <div class="container-fluid">
             <!-- Бренд и переключатель группируются для лучшего отображения на дисплеях мобильных телефонов -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="{{route('profile_student')}}"><img src="/images/logo_ru.png"
-                                                               alt="Логотип Луганского национального университета"></a>
+                <a class="navbar-brand" href="{{route('profile')}}"><img src="/images/logo_ru.png" alt="Логотип Луганского национального университета"></a>
             </div>
 
             <!-- Сбор навигационных ссылок, форм и другого контента для переключения -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav first_menu">
-                    <li><a href="{{route('profile_student')}}">Мои предметы</a></li>
+                    <li class="active-link"><a href="{{route('profile')}}">Мой профиль</a></li>
                     <li><a href="{{route('list_teachers')}}">Преподаватели</a></li>
                     <li><a href="{{route('list_subjects')}}">Предметы на кафедре</a></li>
                 </ul>
@@ -51,12 +51,11 @@
                             <li><a href="#">Настройки</a></li>
                             <li><a href="#">Смена пароля</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Выход</a></li>
+                            <li><a href="/auth/logout">Выход</a></li>
                         </ul>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
-
             <div class="submenu">
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
@@ -71,25 +70,24 @@
 
 @yield('content')
 
+    <!-- jQuery (необходим для JavaScript плагинов Bootstrap) -->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
 
-<!-- jQuery (необходим для JavaScript плагинов Bootstrap) -->
-<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Подключите все скомпилированные плагины (ниже)
+    или добавьте другие файлы при необходимости -->
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Плагин Jasny Bootstrap -->
+    <script src="/node_modules/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
 
-<!-- Подключите все скомпилированные плагины (ниже)
-или добавьте другие файлы при необходимости -->
-<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Плагин Jasny Bootstrap -->
-<script src="/node_modules/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
-
-<script>
-    $(".nav-tabs a").click(function(){
-        $(this).tab('show');
-    });
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-        e.target // activated tab
-        e.relatedTarget // previous tab
-    });
-</script>
+    <script>
+        $(".nav-tabs a").click(function(){
+            $(this).tab('show');
+        });
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            e.target // activated tab
+            e.relatedTarget // previous tab
+        });
+    </script>
 
 </body>
 </html>

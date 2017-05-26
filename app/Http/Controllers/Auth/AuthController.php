@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\User;
+use App\Models\Kurs;
+use App\Models\Group;
+use App\Models\Teacher;
 use Validator;
+use Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use Illuminate\Support\Str;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -23,11 +29,20 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    protected $redirectTo = '/';
 
-    //    Вьюхи профилей
-    public function getRegisterStudent()
+
+    public function getLogin()
     {
-        return view('auth.register_student');
+        $kurs = Kurs::all();
+        $group = Group::all();
+        return view('auth.login', compact('kurs', 'group'));
+    }
+
+    public function getRegister()
+    {
+        $teacher = Teacher::all();
+        return view('auth.register', compact('teacher'));
     }
     
     /**
@@ -52,6 +67,7 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
+            'user_type' => 'required',
         ]);
     }
 
@@ -63,10 +79,57 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+
+        if (Request::hasFile('avatar-2')) {
+            $avatar = $data['avatar-2'];
+            $weight = $avatar->getSize()/1024;
+            $data['weight'] = round($weight, 0) . " " . "Кб";
+            $data['name_file']= $avatar->getClientOriginalName();
+            $pseudonym = Str::random(12).'_'.time(date_create(null));
+            $data['pseudonym']= $pseudonym;
+            $extension = $avatar->getClientOriginalExtension();
+            $data['extension'] = $extension;
+            $destinationPath = public_path('avatars');
+            $data['path_to_file'] = $destinationPath;
+            $avatar->move($destinationPath, $pseudonym . "." . $extension);
+        }
+        else {
+            $data['name_file'] = 'default-avatar-profile';
+            $data['extension'] = 'jpg';
+            $data['weight'] = '4,61 КБ';
+            $data['pseudonym'] = 'NoPseudonym';
+            $data['path_to_file'] = '"E:\OpenServer\domains\-graduate_work1\storage\avatars\default-avatar-profile
+            .jpg"';
+        }
+
+        if($data['user_type'] == 'student'){
+            $user_data = [ 'user_type' =>  $data['user_type'],
+                'name' => $data['name'],
+                'kurs_id' => $data['kurs'],
+                'group_id' => $data['group'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+                'name_file' => $data['name_file'],
+                'extension' => $data['extension'],
+                'weight' => $data['weight'],
+                'pseudonym' => $data['pseudonym'],
+                'path_to_file' => $data['path_to_file'],
+            ];
+        } else{
+            $user_data = [ 'user_type' =>  $data['user_type'],
+                'name' => $data['name'],
+                'teacher_id' => $data['teacher'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+                'name_file' => $data['name_file'],
+                'extension' => $data['extension'],
+                'weight' => $data['weight'],
+                'pseudonym' => $data['pseudonym'],
+                'path_to_file' => $data['path_to_file'],
+            ];
+        }
+
+        $new_user = User::create($user_data);
+        return $new_user;
     }
 }

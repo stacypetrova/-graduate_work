@@ -1,4 +1,8 @@
-@extends('header_button_add_file')
+@extends('layouts.app')
+
+@section('title')
+    Список файлов
+@stop
 
 @section('content')
     <!-- Bootstrap-table (плагин) -->
@@ -157,60 +161,15 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td><a href="{{route('review_file')}}">Резюме Технический писатель</a></td>
-                                        <td>17.06.2016 0:15</td>
-                                        <td>docx</td>
-                                        <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Программирование интернет приложений</td>
-                                        <td>27.10.2016 22:47</td>
-                                        <td>rar</td>
-                                        <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tekhnologia_korporativnykh_setey</td>
-                                        <td>02.10.2016 19:58</td>
-                                        <td>ppt</td>
-                                        <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Резюме Технический писатель</td>
-                                        <td>17.06.2016 0:15</td>
-                                        <td>docx</td>
-                                        <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Программирование интернет приложений</td>
-                                        <td>27.10.2016 22:47</td>
-                                        <td>rar</td>
-                                        <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tekhnologia_korporativnykh_setey</td>
-                                        <td>02.10.2016 19:58</td>
-                                        <td>ppt</td>
-                                        <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Резюме Технический писатель</td>
-                                        <td>17.06.2016 0:15</td>
-                                        <td>docx</td>
-                                        <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Программирование интернет приложений</td>
-                                        <td>27.10.2016 22:47</td>
-                                        <td>rar</td>
-                                        <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tekhnologia_korporativnykh_setey</td>
-                                        <td>02.10.2016 19:58</td>
-                                        <td>ppt</td>
-                                        <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                    </tr>
+                                    @foreach($newfiles as $newfile)
+                                        <tr>
+                                            <td>{{ $newfile->title_file }}</td>
+                                            <td>{{ $newfile->created_at }}</td>
+                                            <td>{{ $newfile->extension }}</td>
+                                            <td><a href="{{ route('download_file', ['alias' => $newfile->pseudonym]) }}"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
+                                            <td><a href="{{ route('delete_file', ['id' => $newfile->id]) }}"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

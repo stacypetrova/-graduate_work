@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 3 мета тега ДОЛЖНЫ идти ПЕРВЫМИ в head;
     любой другой head контент ДОЛЖЕН идти ПОСЛЕ этих тегов -->
-    <title>Регистрация пользователя</title>
+    <title>Регистрация преподавателя</title>
     <link rel="shortcut icon" href="/images/icon.ico" type="image/x-icon">
 
     <!-- Bootstrap -->
@@ -50,11 +50,12 @@
                             Регистрация преподавателя</h3>
                     </div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                        <form class="form-horizontal" role="form" method="post" action="{{ url('auth/register') }}" enctype="multipart/form-data">
                             {!! csrf_field() !!}
 
                             <div class="row">
-<!-------------------------------------------Добавление аватара------------------------------------------------------------------->
+                                <input type="hidden" name="user_type" value="teacher">
+<!------------------------------------Добавление аватара------------------------------------------------------------------->
                                 <div class="col-md-3 avatar_foto">
                                     <div class="form-group">
                                         <div id="kv-avatar-errors-2" class="center-block"
@@ -69,7 +70,7 @@
                                 <div class="col-md-9">
 {{----------------------------------------------------Ф.И.О. преподаватель----------------------------------------------}}
                                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                        <label class="col-md-3 control-label">Ф.И.О.:</label>
+                                        <label for="name" class="col-md-3 control-label">Ф.И.О.:</label>
                                         <div class="col-md-9">
                                             <input type="text" placeholder="Иванов Иван Иванович"
                                                    class="col-md-10 form-control" name="name" value="{{ old('name') }}">
@@ -82,19 +83,23 @@
                                     </div>
 
 
-                                    {{------------------------------------------------Должность преподавателя-------------------------------------------------------}}
+{{------------------------------------------------Анкета преподавателя-----------------------------------------------}}
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Должность:</label>
+                                        <label for="post" class="col-md-3 control-label">Преподаватель:</label>
                                         <div class="col-md-9">
-                                            <input type="work-post" placeholder="Старший преподаватель"
-                                                   class="form-control">
+                                            <select name="teacher" class="selectpicker" title="Выберите анкету преподавателя"
+                                                    data-live-search="true" data-width="100%">
+                                                @foreach($teacher->toArray() as $key=>$value)
+                                                    <option value="{{$value['id']}}">{{$value['name']}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
 
 
-                                    {{----------------------------------------------E-mail адрес преподаватель----------------------------------------------}}
+{{----------------------------------------------E-mail адрес преподаватель----------------------------------------------}}
                                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                        <label class="col-md-3 control-label">E-Mail адрес:</label>
+                                        <label for="email" class="col-md-3 control-label">E-Mail адрес:</label>
                                         <div class="col-md-9">
                                             <input type="email" placeholder="email@email.email" class="form-control"
                                                    name="email" value="{{ old('email') }}">
@@ -102,9 +107,9 @@
                                     </div>
 
 
-                                    {{----------------------------------------------Пароль преподавателя-------------------------------------------------------}}
+{{----------------------------------------------Пароль преподавателя-------------------------------------------------------}}
                                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                        <label class="col-md-3 control-label">Пароль:</label>
+                                        <label for="password" class="col-md-3 control-label">Пароль:</label>
 
                                         <div class="col-md-7">
                                             <input type="password" placeholder="Ваш пароль" class="form-control"
@@ -119,7 +124,7 @@
                                     </div>
 
                                     <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                        <label class="col-md-3 control-label">Повторить пароль:</label>
+                                        <label for="password_confirmation" class="col-md-3 control-label">Повторить пароль:</label>
 
                                         <div class="col-md-7">
                                             <input type="password" placeholder="Повторите пароль" class="form-control"
