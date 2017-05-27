@@ -26,7 +26,7 @@ Route::group(['middleware' => 'auth'], function(){
     // Профиль студента и его пути
     Route::get('/', ['as' => 'profile', 'uses' => 'ProfileController@profile']);
 
-    Route::get('dropbox/{type}', ['as' => 'dropbox', 'uses' => 'Dropbox\FileController@ListFile']);
+
     
     // Скачиваем файл
     Route::get('download/{alias}', ['as' => 'download_file', 'uses' => 'Dropbox\FileController@DownloadFile']);
@@ -42,6 +42,8 @@ Route::group(['middleware' => 'auth'], function(){
 
     // Просмотр файла подробнее
     Route::get('dropbox/review_file', ['as' => 'review_file', 'uses' => 'Dropbox\FileController@ReviewFile']);
+
+    Route::get('dropbox/{type}', ['as' => 'dropbox', 'uses' => 'Dropbox\FileController@ListFile']);
 
     // Просмотр списка преподавателей на кафедре
     Route::get('/list_teachers', ['as' => 'list_teachers', 'uses' => 'ListTeacherController@ListTeacher']);
