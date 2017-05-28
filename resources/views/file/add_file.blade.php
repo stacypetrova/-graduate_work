@@ -32,53 +32,35 @@
             <div class="row">
                 <div class="col-md-3 kurs">
                     <div class="form-group">
+
                         <select name="kurs" class="selectpicker" title="Выберите курс" data-width="100%">
-                            <optgroup label="Бакалавриат">
-                                <option>1 курс</option>
-                                <option>2 курс</option>
-                                <option>3 курс</option>
-                                <option>4 курс</option>
-                            </optgroup>
-                            <optgroup label="Магистратура">
-                                <option>5 курс</option>
-                                <option>6 курс</option>
-                            </optgroup>
+                            @foreach($groups as $group)
+                                @foreach($group->kurs()->get()->groupBy('degree')->toArray() as $key=>$value)
+                                    <optgroup label="{{$key}}">
+                                        @foreach($value as $sub_key=>$sub_value)
+                                            <option value="{{$sub_value['id']}}">{{$sub_value['name']}}</option>
+                                        @endforeach
+                                    </optgroup>
+                                @endforeach
+                            @endforeach
                         </select>
                     </div>
                 </div>
                 <div class="col-md-3 group">
                     <div class="form-group">
                         <select name="group" class="selectpicker" title="Выберите группу" data-live-search="true" data-width="100%">
-                            <optgroup>
-                                <option>ИТ-431</option>
-                                <option>ИТ-432</option>
-                                <option>ИТ-433</option>
-                                <option>ИТ-441</option>
-                                <option>ИТ-442</option>
-                                <option>ИТ-443</option>
-                                <option>ИТ-451</option>
-                                <option>ИТ-452</option>
-                                <option>ИТ-461</option>
-                                <option>ИТ-462</option>
-                                <option>ИТ-451м</option>
-                                <option>ИТ-461м</option>
-                            </optgroup>
+                            @foreach($groups->toArray() as $key=>$value)
+                                <option value="{{$value['id']}}">{{$value['name']}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
                 <div class="col-md-6 subject">
                     <div class="form-group">
                         <select name="subject" class="selectpicker" title="Выберите предмет" data-live-search="true" data-width="100%">
-                            <optgroup>
-                                <option>Периферийные устройства</option>
-                                <option>Теория кодирования дискретной информации</option>
-                                <option>Программирование интернет приложений</option>
-                                <option>Иностранный язык</option>
-                                <option>Защита информации</option>
-                                <option>Технологии корпоративных сетей</option>
-                                <option>Технологии проетировния компьютерных систем</option>
-                                <option>Системы искусственного интеллекта</option>
-                            </optgroup>
+                            @foreach($user->teacher->subjects->toArray() as $key=>$value)
+                                <option value="{{$value['id']}}">{{$value['name']}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>

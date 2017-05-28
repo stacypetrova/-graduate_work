@@ -53,92 +53,51 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td><a href="{{route('review_file')}}">Резюме Технический писатель</a></td>
-                                    <td>17.06.2016 0:15</td>
-                                    <td>docx</td>
-                                    <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Программирование интернет приложений</td>
-                                    <td>27.10.2016 22:47</td>
-                                    <td>rar</td>
-                                    <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Tekhnologia_korporativnykh_setey</td>
-                                    <td>02.10.2016 19:58</td>
-                                    <td>ppt</td>
-                                    <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Резюме Технический писатель</td>
-                                    <td>17.06.2016 0:15</td>
-                                    <td>docx</td>
-                                    <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Программирование интернет приложений</td>
-                                    <td>27.10.2016 22:47</td>
-                                    <td>rar</td>
-                                    <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Tekhnologia_korporativnykh_setey</td>
-                                    <td>02.10.2016 19:58</td>
-                                    <td>ppt</td>
-                                    <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Резюме Технический писатель</td>
-                                    <td>17.06.2016 0:15</td>
-                                    <td>docx</td>
-                                    <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Программирование интернет приложений</td>
-                                    <td>27.10.2016 22:47</td>
-                                    <td>rar</td>
-                                    <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Tekhnologia_korporativnykh_setey</td>
-                                    <td>02.10.2016 19:58</td>
-                                    <td>ppt</td>
-                                    <td><a href="#"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                </tr>
+                                @foreach($allfiles as $file)
+                                    <tr>
+                                        <td>{{ $file->title_file }}</td>
+                                        <td>{{ $file->created_at }}</td>
+                                        <td>{{ $file->extension }}</td>
+                                        <td><a href="{{ route('download_file', ['alias' => $file->pseudonym]) }}"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
+                                    </tr>
+                                @endforeach
+
                                 </tbody>
                             </table>
                         </div>
                         <div class="tab-pane tab-paneGroups" id="groups">
-                            <select class="selectpicker" title="Выберите курс" data-width="fit">
-                                <optgroup label="Бакалавриат">
-                                    <option>1 курс</option>
-                                    <option>2 курс</option>
-                                    <option>3 курс</option>
-                                    <option>4 курс</option>
-                                </optgroup>
-                                <optgroup label="Магистратура">
-                                    <option>5 курс</option>
-                                    <option>6 курс</option>
-                                </optgroup>
-                            </select>
-                            <select class="selectpicker" title="Выберите группу" data-width="fit" data-live-search="true">
-                                <optgroup>
-                                    <option>ИТ-431</option>
-                                    <option>ИТ-432</option>
-                                    <option>ИТ-433</option>
-                                    <option>ИТ-441</option>
-                                    <option>ИТ-442</option>
-                                    <option>ИТ-443</option>
-                                    <option>ИТ-451</option>
-                                    <option>ИТ-452</option>
-                                    <option>ИТ-461</option>
-                                    <option>ИТ-462</option>
-                                    <option>ИТ-451м</option>
-                                    <option>ИТ-461м</option>
-                                </optgroup>
-                            </select>
+                            <form action="{{route('file.create')}}" method="post" role="form" enctype="multipart/form-data">
+                                {!! csrf_field() !!}
+                                <select class="selectpicker" title="Выберите курс" data-width="fit">
+                                    <optgroup label="Бакалавриат">
+                                        <option>1 курс</option>
+                                        <option>2 курс</option>
+                                        <option>3 курс</option>
+                                        <option>4 курс</option>
+                                    </optgroup>
+                                    <optgroup label="Магистратура">
+                                        <option>5 курс</option>
+                                        <option>6 курс</option>
+                                    </optgroup>
+                                </select>
+                                <select class="selectpicker" title="Выберите группу" data-width="fit" data-live-search="true">
+                                    <optgroup>
+                                        <option>ИТ-431</option>
+                                        <option>ИТ-432</option>
+                                        <option>ИТ-433</option>
+                                        <option>ИТ-441</option>
+                                        <option>ИТ-442</option>
+                                        <option>ИТ-443</option>
+                                        <option>ИТ-451</option>
+                                        <option>ИТ-452</option>
+                                        <option>ИТ-461</option>
+                                        <option>ИТ-462</option>
+                                        <option>ИТ-451м</option>
+                                        <option>ИТ-461м</option>
+                                    </optgroup>
+                                </select>
+                                <button>V</button>
+                            </form>
                             <div class="tableGroups">
                                 <table class="table table-bordered" id="tableGroups"
                                        data-toggle="table"
@@ -161,13 +120,13 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($newfiles as $newfile)
+                                    @foreach($sort_files as $file)
                                         <tr>
-                                            <td>{{ $newfile->title_file }}</td>
-                                            <td>{{ $newfile->created_at }}</td>
-                                            <td>{{ $newfile->extension }}</td>
-                                            <td><a href="{{ route('download_file', ['alias' => $newfile->pseudonym]) }}"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
-                                            <td><a href="{{ route('delete_file', ['id' => $newfile->id]) }}"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+                                            <td>{{ $file->title_file }}</td>
+                                            <td>{{ $file->created_at }}</td>
+                                            <td>{{ $file->extension }}</td>
+                                            <td><a href="{{ route('download_file', ['alias' => $file->pseudonym]) }}"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>
+                                            <td><a href="{{ route('delete_file', ['id' => $file->id]) }}"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
                                         </tr>
                                     @endforeach
                                     </tbody>

@@ -8,7 +8,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\NewFile;
 use Illuminate\Support\Str;
-
+use App\Models\Kurs;
+use App\Models\Group;
+use App\Models\User;
+use Auth;
 
 class FileController extends Controller
 {
@@ -21,11 +24,26 @@ class FileController extends Controller
 //    Список файлов для сутдента
 //    Список файлов для преподавателя (с возможностью добавить новый файл, профиль преподавателя)
 
-    public function ListFile()
+    public function ListFile($type, $subject_id,  Request $request)
     {
-        $newfiles = NewFile::all();
+        if($type === 'teacher' && Auth::user()->user_type === 'teacher'){
 
-        return view('file.list_file', ['newfiles' => $newfiles]);
+        } else{
+            $kurs_id = Auth::user()->kurs_id;
+            if($request->kurs_id){
+                $kurs_id = $request->kurs_id;
+            }
+            $group_id = Auth::user()->group_id;
+            if($request->group_id){
+                $group_id = $request->group_id;
+            }
+            $allfiles = NewFile::where('kurs_id', Auth::user()->kurs_id)->where('group_id', Auth::user()->group_id)->where('subject_id',$subject_id)->get();
+
+            $sort_files = NewFile::where('kurs_id', $kurs_id)->where('group_id',$group_id)->where('subject_id',$subject_id)->get();
+
+        }
+
+        return view('file.list_file', ['allfiles' => $allfiles, 'sort_files' => $sort_files]);
     }
 
     
@@ -44,7 +62,10 @@ class FileController extends Controller
 
     public function index()
     {
-        return view('file.add_file');
+        $user = User::with(['teacher', 'teacher.groups', 'teacher.groups.kurs'])->find(Auth::user()->id);
+//        $kurs = Auth::user()->teacher->groups->kurs;
+        $groups = $user->teacher->groups;
+        return view('file.add_file', ['groups'=>$groups,'user'=>$user]);
     }
 
     //  Добавление нового файла преподавателем
@@ -54,36 +75,35 @@ class FileController extends Controller
         
         $addfile = new NewFile();
         $addfile->title_file = $request['title_file'];
-        $addfile->kurs = $request['kurs'];
-        $addfile->group = $request['group'];
-        $addfile->subject = $request['subject'];
-        $addfile->subject = $request['subject'];
+        $addfile->kurs_id = $request['kurs'];
+        $addfile->group_id = $request['group'];
+        $addfile->subject_id = $request['subject'];
+        $addfile->teacher_id = Auth::user()->teacher_id;
         $addfile->description = $request['description'];
 
         $file = $request->file('input_file');
         $weight = $file->getSize()/1024;
         $addfile->weight = round($weight, 0) . " " . "Кб";
         $addfile->name_file= $file->getClientOriginalName();
-//        $pseudonym = $file->getClientOriginalName().'_'.time(date_create(null));
+
         $pseudonym = Str::random(12).'_'.time(date_create(null));
         $addfile->pseudonym= $pseudonym;
         $extension = $file->getClientOriginalExtension();
         $addfile->extension = $extension;
         $destinationPath = storage_path('files');
         $addfile->path_to_file = $destinationPath;
-//        dd($destinationPath);
+
         $file->move($destinationPath, $pseudonym . "." . $extension);
         $addfile->save();
-//        dd('Сохранено');
-//        dd($request);
-        return redirect()->route('dropbox_student');
+
+        return redirect()->route('dropbox', ['type'=>'teacher']);
     }
 
     //    Скачиваем файл
     public function DownloadFile($alias)
     {
         $file = NewFile::where("pseudonym", "=", $alias)->first();
-        // dd($file->path_to_file, $file->pseudonym, $file->extension);
+
         $path_to_file = $file->path_to_file;
         $pseudonym = $file->pseudonym;
         $extension = $file->extension;
