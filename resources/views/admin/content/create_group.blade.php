@@ -41,7 +41,7 @@
                     @foreach($groups as $group)
                         <tr>
                             <td>
-                                {{$group->name}}
+                                <a href="{{route('admin.sync_group', ['id'=>$group->id])}}">{{$group->name}}</a>
                             </td>
                             <td>
                                 {{$group->kurs->name}}

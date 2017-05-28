@@ -24,13 +24,14 @@
                                     <p><strong>Количество предметов на кафедре: </strong> 7</p>
                                 @else
                                     <p><strong>Должность: </strong>{{Auth::user()->teacher->post}}</p>
-                                    <p><strong>Количество предметов: </strong> 7</p>
+                                    <p><strong>Количество предметов: </strong> {{$user->teacher->subjects->count()}}</p>
                                 @endif
 
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-9">
                     @if(Auth::user()->user_type == 'student')
                         <h3>Все предметы</h3>
@@ -38,20 +39,25 @@
                             @foreach($user->group->teachers as $teacher)
                                 @foreach($teacher->subjects as $subject)
                                     <div class="col-md-3 subject_box">
-                                        <a href="{{route('dropbox', ['type' => Auth::user()->user_type])}}">
+                                        <a href="{{route('dropbox', ['type' => Auth::user()->user_type, 'subject_id'=>$subject->id])}}">
                                             <button type="button" class="btn btn-primary btn_list">
-                                                <p>{{$subject->name}}</p></button>
+                                                <p>{{$subject->name}}</p>
+                                            </button>
                                         </a>
                                     </div>
                                 @endforeach
                             @endforeach
                         </div>
                     @else
-
-                        <h3>Предметы</h3>
-                        <div class="row">
-
-                        </div>
+                        @foreach($user->teacher->subjects as $subject)
+                            <div class="col-md-3 subject_box">
+                                <a href="{{route('dropbox', ['type' => Auth::user()->user_type, 'subject_id'=>$subject->id])}}">
+                                    <button type="button" class="btn btn-primary btn_list">
+                                        <p>{{$subject->name}}</p>
+                                    </button>
+                                </a>
+                            </div>
+                        @endforeach
                     @endif
 
                 </div>

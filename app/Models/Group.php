@@ -18,4 +18,8 @@ class Group extends Model
     {
         return $this->belongsToMany('App\Models\Teacher');
     }
+    public function subjects()
+    {
+        return $this->belongsToMany('App\Models\Subject');
+    }
 }

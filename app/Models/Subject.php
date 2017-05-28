@@ -11,6 +11,10 @@ class Subject extends Model
 
     public function teachers()
     {
-        return $this->belongsToMany('App\Models\Teachers');
+        return $this->belongsToMany('App\Models\Teacher');
+    }
+    public function groups()
+    {
+        return $this->belongsToMany('App\Models\Group');
     }
 }

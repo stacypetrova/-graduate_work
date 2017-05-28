@@ -16,9 +16,10 @@ class CreateNewfileTable extends Migration
         {
             $table->bigIncrements('id');
             $table->text('title_file');
-            $table->text('kurs');
-            $table->text('group');
-            $table->text('subject'); 
+            $table->text('kurs_id');
+            $table->text('group_id');
+            $table->text('subject_id');
+            $table->text('teacher_id');
             $table->text('name_file');
             $table->text('extension');
             $table->text('weight');

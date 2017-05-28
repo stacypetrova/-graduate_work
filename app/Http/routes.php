@@ -26,8 +26,8 @@ Route::group(['middleware' => 'auth'], function(){
     // Профиль студента и его пути
     Route::get('/', ['as' => 'profile', 'uses' => 'ProfileController@profile']);
 
-    Route::get('dropbox/{type}', ['as' => 'dropbox', 'uses' => 'Dropbox\FileController@ListFile']);
-    
+    Route::get('dropbox/{type}/{subject_id}', ['as' => 'dropbox', 'uses' => 'Dropbox\FileController@ListFile']);
+
     // Скачиваем файл
     Route::get('download/{alias}', ['as' => 'download_file', 'uses' => 'Dropbox\FileController@DownloadFile']);
 
@@ -75,5 +75,10 @@ Route::group(['middleware' => 'auth'], function(){
             'uses' => 'Admin\AdminController@createSyncTeacherAndSubject']);
         Route::post('/sync_teacher_and_groups/{id}', ['as' => 'admin.create_sync_teacher_and_groups',
             'uses' => 'Admin\AdminController@createSyncTeacherAndGroup']);
+
+        Route::get('/sync_group_and_subject/{id}', ['as' => 'admin.sync_group', 'uses' =>
+            'Admin\AdminController@syncGroupAndSubject']);
+        Route::post('/sync_group_and_subject/{id}', ['as' => 'admin.sync_group_and_subject',
+            'uses' => 'Admin\AdminController@createSyncGroupAndSubject']);
     });
 });

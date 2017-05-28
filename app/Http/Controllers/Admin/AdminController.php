@@ -60,7 +60,7 @@ class AdminController extends Controller
         $subject = new Subject();
         $subject->name = $request->name;
         $subject->save();
-        return redirect()->route('admin.subject');
+        return redirect()->route('admin.subjects');
     }
 
 
@@ -109,11 +109,28 @@ class AdminController extends Controller
     }
 
 
-    public function syncGroupAndSubject()
+    public function syncGroupAndSubject($id)
     {
-        $teachers = Teacher::all();
-        return view('admin.content.create_teacher', ['teachers' => $teachers]);
+        $group = Group::find($id);
+        if($group){
+            $subjects = Subject::whereNotIn('id', $group->subjects->lists('id'))->get();
+        }
+        return view('admin.content.sync_group_and_subject', ['subjects' => $subjects, 'group' => $group]);
     }
 
+    //с группой
+    public function createSyncGroupAndSubject($group_id, Request $request)
+    {
+        $group = Group::with('subjects')->find($group_id);
+        if($group){
+            $subjects = Subject::whereNotIn('id', $group->subjects->lists('id'))->get();
+
+            if(! $group->subjects()->where('subject_id', '=', $request->input('subject_id'))->first()){
+                $group->subjects()->attach($request->input('subject_id'));
+            }
+        }
+
+        return view('admin.content.sync_group_and_subject', ['subjects' => $subjects, 'group' => $group]);
+    }
 
 }
