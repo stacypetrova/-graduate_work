@@ -17,52 +17,53 @@
                         <table class="table table-bordered table-hover">
                             <tr>
                                 <td class="stolbec_width">Наименовапние файла</td>
-                                <td>Резюме Технический писатель</td>
+                                <td>{{$file->name_file}}</td>
                             </tr>
                             <tr>
                                 <td class="stolbec_width">Наименование предмета</td>
-                                <td>Программирование интернет приложений</td>
+                                <td>{{$file->subject->name}}</td>
                             </tr>
                             <tr>
                                 <td class="stolbec_width">Преподаватель</td>
-                                <td>Попов Сергей Валерьевич</td>
+                                <td>{{$file->teacher->name}}</td>
                             </tr>
                             <tr>
                                 <td class="stolbec_width">Курс</td>
-                                <td>4 курс</td>
+                                <td>{{$file->kurs->name}}</td>
                             </tr>
                             <tr>
                                 <td class="stolbec_width">Группа</td>
-                                <td>ИТ-431</td>
+                                <td>{{$file->group->name}}</td>
                             </tr>
                             <tr>
                                 <td class="stolbec_width">Добавлено</td>
-                                <td>17.06.2016 0:15</td>
+                                <td>{{$file->created_at}}</td>
                             </tr>
                             <tr>
                                 <td class="stolbec_width">Расширение файла</td>
-                                <td>docx</td>
+                                <td>{{$file->extension}}</td>
                             </tr>
                             <tr>
                                 <td class="stolbec_width">Описание</td>
-                                <td>Резюме (от фр. résumé или лат. curriculum vitae — «течение жизни», жизнеописание,
-                                    произносится кури́кулюм ви́тэ, часто сокращают до CV, в советской традиции
-                                    автобиография) — документ, содержащий информацию о навыках, опыте работы,
-                                    образовании и другую относящуюся к делу информацию, обычно требуемую при
-                                    рассмотрении кандидатуры человека для найма на работу.
+                                <td>
+                                    {{$file->description}}
                                 </td>
                             </tr>
                         </table>
                         <div class="btn_nazad">
-                            <a class="btn btn-primary" href="{{route('dropbox', ['type' => Auth::user()->user_type])}}" role="button">Назад</a>
-                            <button type="button" class="btn btn-success download"><span
-                                        class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span>Скачать
-                            </button>
+                            <a class="btn btn-primary" href="{{ $redirect_back }}" role="button">Назад</a>
+                            <button type="button" class="btn btn-success download">
+                                <a href="{{ route('download_file', ['alias' => $file->pseudonym]) }}">
+                                    <span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true">
+                                    </span>
+                                    Скачать
+                            </a></button>
+
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <img class="img-thumbnail" src="/images/foto.png" alt="Фотография Фамилия Имя Отчество" title="Фотография Фамилия Имя Отчество">
+                    <img class="img-thumbnail" src="{{'/avatars/'.$file->teacher->user->pseudonym.'.'.$file->teacher->user->extension}}" alt="Фотография Фамилия Имя Отчество" title="Фотография Фамилия Имя Отчество">
                 </div>
             </div>
         </div>

@@ -11,7 +11,8 @@
     <div class="content">
         <h1 class="text-center">Наименование предмета</h1>
         <div class="container">
-            <div class="panel-group">
+            @foreach($teachers as $teacher)
+                <div class="panel-group">
                 <div class="panel panel-info myPanel">
                     <div class="panel-body">
                         <div class="row">
@@ -20,236 +21,35 @@
                                     <img src="/images/foto.png" alt="Фамилия Имя Отчество">
                                     <div class="caption">
                                         <div class="FIO">
-                                            <h3>Фамилия Имя Отчество</h3>
+                                            <h3>{{$teacher->name}}</h3>
                                         </div>
                                         <div class="position">
-                                            <p>Должность</p>
+                                            <p>{{$teacher->post}}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-9">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
+                                    @if($teacher->kurs_group !== null)
+                                        @foreach($teacher->kurs_group as $kurs_name=>$groups)
+                                        <div class="col-md-4">
+                                            <h3>{{$kurs_name}}</h3>
+                                            @foreach($groups as $group_name=>$group)
+                                                <p>{{$group_name}}</p>
+                                            @endforeach
+                                        </div>
+                                        @endforeach
+                                    @endif
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-info myPanel">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="thumbnail">
-                                    <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                                    <div class="caption">
-                                        <div class="FIO">
-                                            <h3>Фамилия Имя Отчество</h3>
-                                        </div>
-                                        <div class="position">
-                                            <p>Должность</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-info myPanel">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="thumbnail">
-                                    <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                                    <div class="caption">
-                                        <div class="FIO">
-                                            <h3>Фамилия Имя Отчество</h3>
-                                        </div>
-                                        <div class="position">
-                                            <p>Должность</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h3>№ курса</h3>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                        <p>Номер группы</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
+            @endforeach
         </div>
     </div>
 

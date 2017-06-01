@@ -45,14 +45,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">Логин<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Настройки</a></li>
-                            <li><a href="#">Смена пароля</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="/auth/logout">Выход</a></li>
-                        </ul>
+                        <a href="/auth/logout" class="button" role="button">Выход</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

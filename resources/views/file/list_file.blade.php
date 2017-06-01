@@ -21,7 +21,6 @@
                     <div class="left_menu">
                         <ul class="nav nav-pills nav-stacked"  id="myTab">
                             <li class="active"><a href="#files" data-toggle="tab"><span class="fa fa-files-o" aria-hidden="true"></span>Файлы</a></li>
-                            <li><a href="#groups" data-toggle="tab"><span class="fa fa-users" aria-hidden="true"></span>Группы</a></li>
                         </ul>
                     </div>
                 </div>
@@ -55,7 +54,7 @@
                                 <tbody>
                                 @foreach($allfiles as $file)
                                     <tr>
-                                        <td>{{ $file->title_file }}</td>
+                                        <td><a href="{{route('review_file', ['id' => $file->id])}}">{{ $file->title_file }}</a></td>
                                         <td>{{ $file->created_at }}</td>
                                         <td>{{ $file->extension }}</td>
                                         <td><a href="{{ route('download_file', ['alias' => $file->pseudonym]) }}"><span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></td>

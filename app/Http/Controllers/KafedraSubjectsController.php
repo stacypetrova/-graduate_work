@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Subject;
+use App\Models\Teacher;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -18,13 +20,27 @@ class KafedraSubjectsController extends Controller
 //    Список предметов
     public function ListSubjectsKafedra()
     {
-        return view('kafedra_subjects.kafedra_subjects');
+        $subjects = Subject::all();
+        return view('kafedra_subjects.kafedra_subjects', ['subjects' => $subjects]);
     }
 
 //    Список преподавателей по предметам
-    public function KafedraSubjectsMore()
+    public function KafedraSubjectsMore($id)
     {
-        return view('kafedra_subjects.kafedra_subjects_more');
+        $teachers = Teacher::with(['groups','groups.kurs','user'])->whereHas('subjects',function ($q) use ($id){
+            $q->where('subject_id', $id);
+        })->get();
+        foreach($teachers as $teacher){
+            $kurs_group = [];
+            foreach($teacher->groups as $group){
+                if( !array_key_exists($group->kurs->name, $kurs_group)){
+                    $kurs_group[$group->kurs->name] = null;
+                }
+                $kurs_group[$group->kurs->name][$group->name] = $group;
+            }
+            $teacher->kurs_group = $kurs_group;
+        }
+        return view('kafedra_subjects.kafedra_subjects_more', ['teachers' => $teachers]);
     }
 
     public function index()

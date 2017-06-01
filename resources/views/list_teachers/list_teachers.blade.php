@@ -11,200 +11,25 @@
     <div class="content">
         <div class="container">
             <div class="row">
+                @foreach($teachers as $teacher)
                 <div class="col-md-3">
                     <div class="thumbnail">
                         <img src="/images/foto.png" alt="Фамилия Имя Отчество">
                         <div class="caption">
                             <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
+                                <h3>{{$teacher->name}}</h3>
                             </div>
                             <div class="position">
-                                <p>Должность</p>
+                                <p>{{$teacher->post}}</p>
                             </div>
                             <div class="More">
-                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary btn-popov" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="\images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary btn-zvereva" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary btn-zorin" role="button">Подробнее</a>
+                                <a href="{{route('list_teacher_files', ['teacher_id' => $teacher->id])}}" class="btn btn-primary btn-popov" role="button">Подробнее</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary btn-popova" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="thumbnail">
-                        <img src="/images/foto.png" alt="Фамилия Имя Отчество">
-                        <div class="caption">
-                            <div class="FIO">
-                                <h3>Фамилия Имя Отчество</h3>
-                            </div>
-                            <div class="position">
-                                <p>Должность</p>
-                            </div>
-                            <div class="More">
-                                <a href="{{route('list_teacher_files')}}" class="btn btn-primary btn-sheglov" role="button">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
             </div>
         </div>
