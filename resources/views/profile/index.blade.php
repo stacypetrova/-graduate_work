@@ -21,7 +21,7 @@
                                 @if(Auth::user()->user_type == 'student')
                                     <p><strong>Курс: </strong>{{Auth::user()->group->kurs->name}}</p>
                                     <p><strong>Группа: </strong>{{Auth::user()->group->name}}</p>
-                                    <p><strong>Количество предметов на кафедре: </strong> 7</p>
+                                    <p><strong>Количество предметов на кафедре: </strong> <?php $count = 0; ?> @foreach(Auth::user()->group->subjects as $value) <?php $count++ ?> @endforeach {{$count}} </p>
                                 @else
                                     <p><strong>Должность: </strong>{{Auth::user()->teacher->post}}</p>
                                     <p><strong>Количество предметов: </strong> {{$user->teacher->subjects->count()}}</p>

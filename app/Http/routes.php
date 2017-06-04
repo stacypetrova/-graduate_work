@@ -41,7 +41,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('add_file', ['as' => 'file.create', 'uses' => 'Dropbox\FileController@create']);
 
     // Просмотр файла подробнее
-    Route::get('dropbox/review_file', ['as' => 'review_file', 'uses' => 'Dropbox\FileController@ReviewFile']);
+    Route::get('dropbox/review_file/{id}', ['as' => 'review_file', 'uses' => 'Dropbox\FileController@ReviewFile']);
 
 
     Route::get('dropbox/{type}/{subject_id}', ['as' => 'dropbox', 'uses' => 'Dropbox\FileController@ListFile']);
@@ -49,14 +49,14 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/list_teachers', ['as' => 'list_teachers', 'uses' => 'ListTeacherController@ListTeacher']);
 
     // Просмотр всей скинутых фалов преподавателя (без возможность добавления новых, профиль студента)
-    Route::get('/list_teacher_file', ['as' => 'list_teacher_files', 'uses' =>
+    Route::get('/list_teacher_file/{teacher_id}', ['as' => 'list_teacher_files', 'uses' =>
         'Dropbox\FileController@ReviewListFileTeacher']);
 
     // Просмотр списка предметов на кафедре
     Route::get('/list_subjects', ['as' => 'list_subjects', 'uses' => 'KafedraSubjectsController@ListSubjectsKafedra']);
 
     // Просмотр преподавателей по предмету
-    Route::get('/subject_more', ['as' => 'subjects_more', 'uses' => 'KafedraSubjectsController@KafedraSubjectsMore']);
+    Route::get('/subject_more/{id}', ['as' => 'subjects_more', 'uses' => 'KafedraSubjectsController@KafedraSubjectsMore']);
 
 
     Route::group(['prefix' => 'admin'], function(){

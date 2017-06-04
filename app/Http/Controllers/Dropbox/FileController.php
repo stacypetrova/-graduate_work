@@ -27,7 +27,9 @@ class FileController extends Controller
     public function ListFile($type, $subject_id,  Request $request)
     {
         if($type === 'teacher' && Auth::user()->user_type === 'teacher'){
+            $allfiles = NewFile::where('subject_id', $subject_id)->get();
 
+            $sort_files = NewFile::where('subject_id',$subject_id)->get();
         } else{
             $kurs_id = Auth::user()->kurs_id;
             if($request->kurs_id){
@@ -37,10 +39,9 @@ class FileController extends Controller
             if($request->group_id){
                 $group_id = $request->group_id;
             }
-            $allfiles = NewFile::where('kurs_id', Auth::user()->kurs_id)->where('group_id', Auth::user()->group_id)->where('subject_id',$subject_id)->get();
+            $allfiles = NewFile::where('kurs_id', Auth::user()->kurs_id)->where('group_id', Auth::user()->group_id)->where('subject_id', $subject_id)->get();
 
             $sort_files = NewFile::where('kurs_id', $kurs_id)->where('group_id',$group_id)->where('subject_id',$subject_id)->get();
-
         }
 
         return view('file.list_file', ['allfiles' => $allfiles, 'sort_files' => $sort_files]);
@@ -49,15 +50,27 @@ class FileController extends Controller
     
 
 //    Список файлов преподавателя (без возможности добавить новый файл, профиль студента)
-    public function ReviewListFileTeacher()
+    public function ReviewListFileTeacher($teacher_id)
     {
-        return view('file.review_list_file_teacher');
+        $allfiles = NewFile::where('teacher_id', $teacher_id)->get();
+
+        $sort_files = NewFile::where('teacher_id',$teacher_id)->get();
+        return view('file.list_file', ['allfiles' => $allfiles, 'sort_files' => $sort_files]);
     }
 
 //    Подробный просмотр файла для студента/преподавателя
-    public function ReviewFile()
+    public function ReviewFile($id)
     {
-        return view('file.review_file');
+        $redirect_back  = \URL::previous();
+        if($redirect_back){
+
+        }
+        $newFile = NewFile::with(['teacher', 'subject', 'kurs', 'group'])->findOrFail($id);
+
+        return view('file.review_file', [
+            'file' => $newFile,
+            'redirect_back' => $redirect_back
+        ]);
     }
 
     public function index()
@@ -80,8 +93,8 @@ class FileController extends Controller
         $addfile->subject_id = $request['subject'];
         $addfile->teacher_id = Auth::user()->teacher_id;
         $addfile->description = $request['description'];
-
         $file = $request->file('input_file');
+
         $weight = $file->getSize()/1024;
         $addfile->weight = round($weight, 0) . " " . "Кб";
         $addfile->name_file= $file->getClientOriginalName();
@@ -96,7 +109,7 @@ class FileController extends Controller
         $file->move($destinationPath, $pseudonym . "." . $extension);
         $addfile->save();
 
-        return redirect()->route('dropbox', ['type'=>'teacher']);
+        return redirect()->route('list_teacher_files', ['teacher_id'=>Auth::user()->teacher_id]);
     }
 
     //    Скачиваем файл

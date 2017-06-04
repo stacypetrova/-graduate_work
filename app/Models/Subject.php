@@ -13,8 +13,10 @@ class Subject extends Model
     {
         return $this->belongsToMany('App\Models\Teacher');
     }
+
     public function groups()
     {
         return $this->belongsToMany('App\Models\Group');
     }
+
 }

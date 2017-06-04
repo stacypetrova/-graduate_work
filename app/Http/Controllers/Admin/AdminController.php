@@ -129,8 +129,7 @@ class AdminController extends Controller
                 $group->subjects()->attach($request->input('subject_id'));
             }
         }
-
-        return view('admin.content.sync_group_and_subject', ['subjects' => $subjects, 'group' => $group]);
+        return redirect()->route('admin.sync_group', ['id'=>$group_id]);
     }
 
 }

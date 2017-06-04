@@ -32,7 +32,6 @@
             <div class="row">
                 <div class="col-md-3 kurs">
                     <div class="form-group">
-
                         <select name="kurs" class="selectpicker" title="Выберите курс" data-width="100%">
                             @foreach($groups as $group)
                                 @foreach($group->kurs()->get()->groupBy('degree')->toArray() as $key=>$value)

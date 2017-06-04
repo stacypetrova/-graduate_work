@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -18,7 +19,8 @@ class ListTeacherController extends Controller
 //    Список преподавателей
     public function ListTeacher()
     {
-        return view('list_teachers.list_teachers');
+        $teachers = Teacher::all();
+        return view('list_teachers.list_teachers', ['teachers' => $teachers]);
     }
 
     public function index()
